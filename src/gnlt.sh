@@ -153,7 +153,7 @@ downloadFactoryImage () {
 }
 
 runFactoryCommands () {
-  cd ./platform-tools/factory
+  cd ./platform-tools
   ./fastboot flash bootloader ./factory/extract/bootloader.img
   ./fastboot reboot-bootloader
   sleep 5
