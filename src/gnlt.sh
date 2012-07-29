@@ -1,5 +1,5 @@
 #!/bin/bash
-# Galaxy Nexus Linux Toolkit v1.0
+# Galaxy Nexus Linux Toolkit v0.2
 # by lucasfarre (tatelucas)
 # Apache License 2.0
 # Source: http://code.google.com/p/galaxy-nexus-linux-toolkit/
@@ -14,7 +14,7 @@ FACTORY_IMAGE_URL="https://dl.google.com/dl/android/aosp/yakju-jro03c-factory-31
 printHeader () {
 reset
 echo "********************************************************************************"
-echo "*               GSM Galaxy Nexus Linux Toolkit 0.1 by tatelucas                *"
+echo "*               GSM Galaxy Nexus Linux Toolkit 0.2 by tatelucas                *"
 echo "********************************************************************************"
 }
 
@@ -125,6 +125,7 @@ factory () {
   printHeader
   printFactoryHeader
   printBootloaderManual
+  downloadFactoryImage
   runFactoryCommands
   returnMenu
  }
@@ -134,7 +135,7 @@ printFactoryHeader () {
   echo ""
 }
 
-runFactoryCommands () {
+downloadFactoryImage () {
   cd ./platform-tools/factory
   if [ ! -e ./factory.tgz ];
   then
@@ -148,6 +149,11 @@ runFactoryCommands () {
   mv `ls image*` ./image.zip
   cd ..
   cd ..
+  cd ..
+}
+
+runFactoryCommands () {
+  cd ./platform-tools/factory
   ./fastboot flash bootloader ./factory/extract/bootloader.img
   ./fastboot reboot-bootloader
   sleep 5
@@ -155,6 +161,7 @@ runFactoryCommands () {
   ./fastboot reboot-bootloader
   sleep 5
   ./fastboot -w update ./factory/extract/image.zip
+  cd ..
 }
 
 exitToolkit () {
