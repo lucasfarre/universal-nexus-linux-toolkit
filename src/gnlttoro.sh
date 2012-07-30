@@ -1,5 +1,5 @@
 #!/bin/bash
-# Galaxy Nexus Linux Toolkit v0.2
+# Verizon Galaxy Nexus Linux Toolkit v0.2
 # by lucasfarre (tatelucas)
 # Apache License 2.0
 # Source: http://code.google.com/p/galaxy-nexus-linux-toolkit/
@@ -7,14 +7,14 @@
 
 # Macros
 
-FACTORY_IMAGE_URL="https://dl.google.com/dl/android/aosp/yakju-jro03c-factory-3174c1e5.tgz"
+FACTORY_IMAGE_URL="https://dl.google.com/dl/android/aosp/mysid-imm76k-factory-98d21321.tgz"
 
 # Functions
 
 printHeader () {
 reset
 echo "********************************************************************************"
-echo "*               GSM Galaxy Nexus Linux Toolkit 0.2 by tatelucas                *"
+echo "*              Verizon Galaxy Nexus Linux Toolkit 0.2 by tatelucas             *"
 echo "********************************************************************************"
 }
 
