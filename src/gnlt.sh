@@ -171,8 +171,19 @@ logFileInitialization () {
 printHeader () {
   clear
   echo "********************************************************************************"
-  echo "*                Universal Nexus Linux Toolkit v1.99 by tatelucas               *"
+  echo "*                Universal Nexus Linux Toolkit v1.9 by tatelucas               *"
   echo "********************************************************************************"
+}
+
+#Device chooser and set variables for selected device.
+deviceChooser () {
+DEVICE=$INVALID_DEVICE
+while [ $DEVICE == $INVALID_DEVICE ]
+do
+  printHeader
+  printDeviceChooser
+  setDeviceVariables
+done
 }
 
 printDeviceChooser () {
@@ -192,50 +203,6 @@ printDeviceChooser () {
   echo -n "Please choose a valid option: "
   read DEVICE
   echo ""
-}
-
-downloadPlatformTools () {
-  if [ ! -d $PLATFORM_TOOLS_DIR ];
-  then
-    echo "Downloading Platform Tools..."
-    mkdir $PLATFORM_TOOLS_DIR
-    cd $PLATFORM_TOOLS_DIR
-    wget $PLATFORM_TOOLS_URL
-  fi
-}
-
-checkPlatformTools () {
-  cd $PLATFORM_TOOLS_DIR
-  if [ -e $PLATFORM_TOOLS_TGZ ] && [ $PLATFORM_TOOLS_MD5 != "`md5sum $PLATFORM_TOOLS_TGZ | head -c 32`" ];
-  then
-    ERROR=$TRUE
-    echo "ERROR: Platform Tools are corrupted. Erasing..."
-    cd ..
-    rm -r $PLATFORM_TOOLS_DIR
-    echo "Erased. Please try again later."
-  fi
-}
-
-extractPlatformTools () {
-  cd $PLATFORM_TOOLS_DIR
-  if [ -e $PLATFORM_TOOLS_TGZ ];
-  then
-    tar -xzf $PLATFORM_TOOLS_TGZ
-    rm $PLATFORM_TOOLS_TGZ
-  fi
-}
-
-printModeChooser () {
-  echo "Modes"
-  echo ""
-  echo "$AUTO_MODE_ID. Automatic [Requires USB debugging enabled. Recommended for most devices]"
-  echo "$MANUAL_MODE_ID. Manual [Requires keys combinations. Recommended for Non-Booting devices]"
-  echo ""
-  echo "$EXIT_KEY. Exit"
-  echo ""
-  echo -n "Please choose a mode: "
-  read MODE
-  echo ""  
 }
 
 setDeviceVariables () {
@@ -318,6 +285,100 @@ setDeviceVariables () {
   esac
 }
 
+#Android SDK platform tools download
+platformTools () {
+ERROR=$TRUE
+while [ $ERROR -eq $TRUE ]
+do
+  downloadPlatformTools
+  ERROR=$FALSE
+  checkPlatformTools
+  if [ $ERROR -eq $FALSE ];
+  then
+    extractPlatformTools
+  fi
+done
+}
+
+downloadPlatformTools () {
+  if [ ! -d $PLATFORM_TOOLS_DIR ];
+  then
+    echo "Downloading Platform Tools..."
+    mkdir $PLATFORM_TOOLS_DIR
+    cd $PLATFORM_TOOLS_DIR
+    wget $PLATFORM_TOOLS_URL
+  fi
+}
+
+checkPlatformTools () {
+  cd $PLATFORM_TOOLS_DIR
+  if [ -e $PLATFORM_TOOLS_TGZ ] && [ $PLATFORM_TOOLS_MD5 != "`md5sum $PLATFORM_TOOLS_TGZ | head -c 32`" ];
+  then
+    ERROR=$TRUE
+    echo "ERROR: Platform Tools are corrupted. Erasing..."
+    cd ..
+    rm -r $PLATFORM_TOOLS_DIR
+    echo "Erased. Please try again later."
+  fi
+}
+
+extractPlatformTools () {
+  cd $PLATFORM_TOOLS_DIR
+  if [ -e $PLATFORM_TOOLS_TGZ ];
+  then
+    tar -xzf $PLATFORM_TOOLS_TGZ
+    rm $PLATFORM_TOOLS_TGZ
+  fi
+}
+
+#Choose mode and set variables for selected mode
+modeChooser () {
+MODE=$INVALID_MODE
+while [ $MODE == $INVALID_MODE ]
+do
+  printHeader
+  printModeChooser
+  setModeVariables
+done
+}
+
+printModeChooser () {
+  echo "Modes"
+  echo ""
+  echo "$AUTO_MODE_ID. Automatic [Requires USB debugging enabled. Recommended for most devices]"
+  echo "$MANUAL_MODE_ID. Manual [Requires keys combinations. Recommended for Non-Booting devices]"
+  echo ""
+  echo "$EXIT_KEY. Exit"
+  echo ""
+  echo -n "Please choose a mode: "
+  read MODE
+  echo ""  
+}
+
+setModeVariables () {
+  case $MODE in
+    $AUTO_MODE_ID) SELECTED_MODE=$AUTO_MODE_NAME;;
+    $MANUAL_MODE_ID) SELECTED_MODE=$MANUAL_MODE_NAME;;
+    $EXIT_KEY) clear && exit;;
+    *) MODE=$INVALID_MODE;;
+  esac
+}
+
+#Device data download for selected device
+deviceData () {
+ERROR=$TRUE
+while [ $ERROR -eq $TRUE ]
+do
+  downloadDeviceData
+  ERROR=$FALSE
+  checkDeviceData
+  if [ $ERROR -eq $FALSE ];
+  then
+    extractDeviceData
+  fi
+done
+}
+
 downloadDeviceData () {
   if [ ! -d $DEVICES_DIR ];
   then
@@ -350,15 +411,6 @@ extractDeviceData () {
     tar -xzf $DEVICE_DATA_TGZ
     rm $DEVICE_DATA_TGZ
   fi
-}
-
-setModeVariables () {
-  case $MODE in
-    $AUTO_MODE_ID) SELECTED_MODE=$AUTO_MODE_NAME;;
-    $MANUAL_MODE_ID) SELECTED_MODE=$MANUAL_MODE_NAME;;
-    $EXIT_KEY) clear && exit;;
-    *) MODE=$INVALID_MODE;;
-  esac
 }
 
 printDevice () {
@@ -646,37 +698,12 @@ END
 }
 
 # Main
-
 ERROR=$FALSE
 logFileInitialization
-DEVICE=$INVALID_DEVICE
-while [ $DEVICE == $INVALID_DEVICE ]
-do
-  printHeader
-  printDeviceChooser
-  setDeviceVariables
-done
-downloadPlatformTools
-ERROR=$FALSE
-checkPlatformTools
-if [ $ERROR -eq $FALSE ];
-then
-  extractPlatformTools
-fi
-downloadDeviceData
-ERROR=$FALSE
-checkDeviceData
-if [ $ERROR -eq $FALSE ];
-then
-  extractDeviceData
-fi
-MODE=$INVALID_MODE
-while [ $MODE == $INVALID_MODE ]
-do
-  printHeader
-  printModeChooser
-  setModeVariables
-done
+deviceChooser
+platformTools
+deviceData
+modeChooser
 EXIT=$FALSE
 while [ $EXIT -eq $FALSE ]
 do
