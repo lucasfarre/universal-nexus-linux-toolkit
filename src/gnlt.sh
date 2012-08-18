@@ -22,12 +22,12 @@
 # XDA Official Thread: http://forum.xda-developers.com/showthread.php?t=1810089
 
 
-# Environment Variables
+# /*** Environment Variables ***/
 
 PATH="$PATH:$PWD/platform-tools"
 
 
-# Constants
+# /*** Constants ***/
 
 TRUE=1
 FALSE=0
@@ -166,7 +166,7 @@ logFileInitialization () {
 }
 
 
-# Functions
+# /*** Functions ***/ 
 
 printHeader () {
   clear
@@ -175,7 +175,8 @@ printHeader () {
   echo "********************************************************************************"
 }
 
-#Device chooser and set variables for selected device.
+# Device chooser and set variables for selected device
+
 deviceChooser () {
 DEVICE=$INVALID_DEVICE
 while [ $DEVICE == $INVALID_DEVICE ]
@@ -285,7 +286,7 @@ setDeviceVariables () {
   esac
 }
 
-#Android SDK platform tools download
+# Android SDK platform tools download
 platformTools () {
 ERROR=$TRUE
 while [ $ERROR -eq $TRUE ]
@@ -331,40 +332,7 @@ extractPlatformTools () {
   fi
 }
 
-#Choose mode and set variables for selected mode
-modeChooser () {
-MODE=$INVALID_MODE
-while [ $MODE == $INVALID_MODE ]
-do
-  printHeader
-  printModeChooser
-  setModeVariables
-done
-}
-
-printModeChooser () {
-  echo "Modes"
-  echo ""
-  echo "$AUTO_MODE_ID. Automatic [Requires USB debugging enabled. Recommended for most devices]"
-  echo "$MANUAL_MODE_ID. Manual [Requires keys combinations. Recommended for Non-Booting devices]"
-  echo ""
-  echo "$EXIT_KEY. Exit"
-  echo ""
-  echo -n "Please choose a mode: "
-  read MODE
-  echo ""  
-}
-
-setModeVariables () {
-  case $MODE in
-    $AUTO_MODE_ID) SELECTED_MODE=$AUTO_MODE_NAME;;
-    $MANUAL_MODE_ID) SELECTED_MODE=$MANUAL_MODE_NAME;;
-    $EXIT_KEY) clear && exit;;
-    *) MODE=$INVALID_MODE;;
-  esac
-}
-
-#Device data download for selected device
+# Device data download for selected device
 deviceData () {
 ERROR=$TRUE
 while [ $ERROR -eq $TRUE ]
@@ -413,6 +381,41 @@ extractDeviceData () {
   fi
 }
 
+# Choose mode and set variables for selected mode
+modeChooser () {
+MODE=$INVALID_MODE
+while [ $MODE == $INVALID_MODE ]
+do
+  printHeader
+  printModeChooser
+  setModeVariables
+done
+}
+
+printModeChooser () {
+  echo "Modes"
+  echo ""
+  echo "$AUTO_MODE_ID. Automatic [Requires USB debugging enabled. Recommended for most devices]"
+  echo "$MANUAL_MODE_ID. Manual [Requires keys combinations. Recommended for Non-Booting devices]"
+  echo ""
+  echo "$EXIT_KEY. Exit"
+  echo ""
+  echo -n "Please choose a mode: "
+  read MODE
+  echo ""  
+}
+
+setModeVariables () {
+  case $MODE in
+    $AUTO_MODE_ID) SELECTED_MODE=$AUTO_MODE_NAME;;
+    $MANUAL_MODE_ID) SELECTED_MODE=$MANUAL_MODE_NAME;;
+    $EXIT_KEY) clear && exit;;
+    *) MODE=$INVALID_MODE;;
+  esac
+}
+
+# Main Menu User Interface
+
 printDevice () {
   echo "Selected Device: $DEVICE_NAME"
 }
@@ -442,6 +445,8 @@ returnMenu () {
   echo ""
   read KEY
 }
+
+# Unlock Bootloader
 
 bootloader () {
   printBootloaderHeader
@@ -505,6 +510,8 @@ rebootBootloader () {
   sleep 5
 }
 
+# Flash CWM Recovery
+
 recovery () {
   printRecoveryHeader
   printRecoveryMenu
@@ -546,6 +553,8 @@ runRecoveryCommands () {
   fastboot flash recovery $DEVICE_DIR/recovery/$RECOVERY_VERSION/recovery.img
 }
 
+# Root the device
+
 root () {
   printHeader
   printRootHeader
@@ -573,6 +582,8 @@ runRootCommands () {
   adb push $DEVICE_DIR/root/su.zip /sdcard/GNLT
   adb reboot recovery
 }
+
+#  Flash Google Factory Image
 
 factory () {
   printHeader
@@ -633,6 +644,8 @@ runFactoryCommands () {
   bash flash-all.sh
 }
 
+# Lock the Bootloader
+
 lockBootloader () {
   printLockHeader
   printModeManual
@@ -653,6 +666,8 @@ runLockCommands () {
   fi
   fastboot oem lock
 }
+
+# Exit Toolkit
 
 exitToolkit () {
   EXIT=$TRUE
@@ -697,7 +712,8 @@ END
   fi
 }
 
-# Main
+# /*** Main ***/
+
 ERROR=$FALSE
 logFileInitialization
 deviceChooser
