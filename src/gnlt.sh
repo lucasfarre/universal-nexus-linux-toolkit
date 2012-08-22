@@ -15,7 +15,7 @@
 #   limitations under the License.
 
 
-# Universal Nexus Linux Toolkit v1.99
+# Universal Nexus Linux Toolkit v1.9
 # by lucasfarre (tatelucas)
 # Apache License 2.0
 # Source: http://code.google.com/p/galaxy-nexus-linux-toolkit/
@@ -33,7 +33,11 @@ TRUE=1
 FALSE=0
 INVALID_DEVICE=0
 INVALID_MODE=0
+INVALID_KEY=-1
 EXIT_KEY=0
+RETURN_KEY="R"
+YES_KEY="Y"
+NO_KEY="N"
 
 PLATFORM_TOOLS_DIR="$PWD/platform-tools"
 PLATFORM_TOOLS_TGZ="$PLATFORM_TOOLS_DIR/platformtools.tgz"
@@ -451,9 +455,18 @@ returnMenu () {
 bootloader () {
   printBootloaderHeader
   printModeManual
-  runBootloaderCommands
-  let UNLOCK_COUNTER+=1
-  returnMenu
+  while [ $KEY != $NO_KEY ] && [ $KEY != $YES_KEY ] 
+  do
+  printHeader
+  printBootloaderHeader
+  printModeManual
+  done
+  if [ $KEY == $YES_KEY ];
+  then
+    runBootloaderCommands
+    let UNLOCK_COUNTER+=1
+    returnMenu
+  fi
 }
 
 printBootloaderHeader () {
@@ -480,7 +493,7 @@ printBootloaderManual () {
   echo "   You're now in the Bootloader Mode! If you don't see the image,"
   echo "   you must follow the instructions again."
   echo "4. Please connect the device to your PC via USB."
-  echo -n "5. To continue, please press ENTER: "
+  echo -n "5. Do you want to start the process? [$YES_KEY/$NO_KEY]: "
   read KEY
   echo ""
 }
@@ -492,7 +505,7 @@ printAndroidDebuggingManual () {
   echo "1. Power on your device and connect the device to your PC via USB."
   echo "2. Go to 'Settings' >> 'Developer options', turn ON the switch,"
   echo "   and check 'USB debugging'. You're now in Android Debugging Mode!"
-  echo -n "3. To continue, please press ENTER: "
+  echo -n "3. Do you want to start the process? [$YES_KEY/$NO_KEY]: "
   read KEY
   echo ""
 }
@@ -515,24 +528,30 @@ rebootBootloader () {
 recovery () {
   printRecoveryHeader
   printRecoveryMenu
-  while [ $KEY != $STANDARD_CWM_ID ] && [ $KEY != $TOUCH_CWM_ID ]
+  while [ $KEY != $STANDARD_CWM_ID ] && [ $KEY != $TOUCH_CWM_ID ] && [ $KEY != $RETURN_KEY ] 
   do
     printHeader
     printRecoveryHeader
     printRecoveryMenu
   done
-  if [ $KEY == $STANDARD_CWM_ID ];
+  if [ $KEY != $RETURN_KEY ];
+  then
+    if [ $KEY == $STANDARD_CWM_ID ];
+      then
+        RECOVERY_VERSION="standard"
+      else
+        RECOVERY_VERSION="touch"
+    fi
+    printHeader
+    printRecoveryHeader
+    printModeManual
+    if [ $KEY == $YES_KEY ];
     then
-      RECOVERY_VERSION="standard"
-    else
-      RECOVERY_VERSION="touch"
+      runRecoveryCommands
+      let RECOVERY_COUNTER+=1
+      returnMenu
+    fi
   fi
-  printHeader
-  printRecoveryHeader
-  printModeManual
-  runRecoveryCommands
-  let RECOVERY_COUNTER+=1
-  returnMenu
 }
 
 printRecoveryHeader () {
@@ -543,6 +562,8 @@ printRecoveryHeader () {
 printRecoveryMenu () {
   echo "$STANDARD_CWM_ID. Standard CWM Recovery"
   echo "$TOUCH_CWM_ID. Touch CWM Recovery"
+  echo ""
+  echo "$RETURN_KEY. Return to the main menu"
   echo ""
   echo -n "Please choose a valid option: "
   read KEY
@@ -559,10 +580,19 @@ root () {
   printHeader
   printRootHeader
   printAndroidDebuggingManual
-  printRootManual
-  runRootCommands
-  let ROOT_COUNTER+=1
-  returnMenu
+  while [ $KEY != $NO_KEY ] && [ $KEY != $YES_KEY ] 
+  do
+  printHeader
+  printRootHeader
+  printAndroidDebuggingManual
+  done
+  if [ $KEY == $YES_KEY ];
+  then
+    printRootManual
+    runRootCommands
+    let ROOT_COUNTER+=1
+    returnMenu
+  fi
 }
 
 printRootHeader () {
@@ -589,16 +619,25 @@ factory () {
   printHeader
   printFactoryHeader
   printModeManual
-  downloadFactoryImage
-  ERROR=$FALSE
-  checkFactoryImage
-  if [ $ERROR -eq $FALSE ];
+  while [ $KEY != $NO_KEY ] && [ $KEY != $YES_KEY ] 
+  do
+  printHeader
+  printFactoryHeader
+  printModeManual
+  done
+  if [ $KEY == $YES_KEY ];
   then
-    extractFactoryImage
-    runFactoryCommands
+    downloadFactoryImage
+    ERROR=$FALSE
+    checkFactoryImage
+    if [ $ERROR -eq $FALSE ];
+      then
+        extractFactoryImage
+        runFactoryCommands
+    fi
+    let FACTORY_COUNTER+=1
+    returnMenu
   fi
-  let FACTORY_COUNTER+=1
-  returnMenu
 }
 
 printFactoryHeader () {
@@ -649,9 +688,18 @@ runFactoryCommands () {
 lockBootloader () {
   printLockHeader
   printModeManual
-  runLockCommands
-  let LOCK_COUNTER+=1
-  returnMenu
+  while [ $KEY != $NO_KEY ] && [ $KEY != $YES_KEY ] 
+  do
+  printHeader
+  printLockHeader
+  printModeManual
+  done
+  if [ $KEY == $YES_KEY ];
+  then
+    runLockCommands
+    let LOCK_COUNTER+=1
+    returnMenu
+  fi
 }
 
 printLockHeader () {
