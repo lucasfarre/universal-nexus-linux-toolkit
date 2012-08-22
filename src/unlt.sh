@@ -516,11 +516,19 @@ runBootloaderCommands () {
   rebootBootloader
   fi
   fastboot oem unlock
+  if [ $MODE == $AUTO_MODE_ID ];
+  then
+    rebootAndroid
+  fi
 }
 
 rebootBootloader () {
   adb reboot bootloader
   sleep 5
+}
+
+rebootAndroid () {
+  fastboot reboot
 }
 
 # Flash CWM Recovery
@@ -572,6 +580,10 @@ printRecoveryMenu () {
 runRecoveryCommands () {
   rebootBootloader
   fastboot flash recovery $DEVICE_DIR/recovery/$RECOVERY_VERSION/recovery.img
+  if [ $MODE == $AUTO_MODE_ID ];
+  then
+    rebootAndroid
+  fi
 }
 
 # Root the device
@@ -713,6 +725,10 @@ runLockCommands () {
   rebootBootloader
   fi
   fastboot oem lock
+  if [ $MODE == $AUTO_MODE_ID ];
+  then
+    rebootAndroid
+  fi
 }
 
 # Exit Toolkit
