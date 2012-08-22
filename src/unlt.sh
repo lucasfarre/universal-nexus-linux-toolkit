@@ -15,7 +15,7 @@
 #   limitations under the License.
 
 
-# Universal Nexus Linux Toolkit v1.9
+# Universal Nexus Linux Toolkit v1.0
 # by lucasfarre (tatelucas)
 # Apache License 2.0
 # Source: http://code.google.com/p/galaxy-nexus-linux-toolkit/
@@ -175,7 +175,7 @@ logFileInitialization () {
 printHeader () {
   clear
   echo "********************************************************************************"
-  echo "*                Universal Nexus Linux Toolkit v1.9 by tatelucas               *"
+  echo "*                Universal Nexus Linux Toolkit v1.0 by tatelucas               *"
   echo "********************************************************************************"
 }
 
