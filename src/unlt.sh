@@ -15,7 +15,7 @@
 #   limitations under the License.
 
 
-# Universal Nexus Linux Toolkit v1.0
+# Universal Nexus Linux Toolkit v1.01
 # by lucasfarre (tatelucas)
 # Apache License 2.0
 # Source: http://code.google.com/p/galaxy-nexus-linux-toolkit/
@@ -175,7 +175,7 @@ logFileInitialization () {
 printHeader () {
   clear
   echo "********************************************************************************"
-  echo "*                Universal Nexus Linux Toolkit v1.0 by tatelucas               *"
+  echo "*               Universal Nexus Linux Toolkit v1.01 by tatelucas               *"
   echo "********************************************************************************"
 }
 
@@ -524,7 +524,7 @@ runBootloaderCommands () {
 
 rebootBootloader () {
   adb reboot bootloader
-  sleep 5
+  #sleep 5  There's no need to add wait time because Fastboot always wait for device.
 }
 
 rebootAndroid () {
@@ -578,7 +578,10 @@ printRecoveryMenu () {
 }
 
 runRecoveryCommands () {
+  if [ $MODE == $AUTO_MODE_ID ];
+  then
   rebootBootloader
+  fi
   fastboot flash recovery $DEVICE_DIR/recovery/$RECOVERY_VERSION/recovery.img
   if [ $MODE == $AUTO_MODE_ID ];
   then
