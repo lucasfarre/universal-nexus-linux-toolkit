@@ -140,7 +140,6 @@ CRESPOK_DATA_MD5="21bdc17bd978c81cecb5cd61a20e2109"
 CRESPO4G_DATA_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/crespo4g$VERSION.tgz"
 CRESPO4G_DATA_MD5="3bfc331983d84d65ac2ecd5ba9224b1a"
 
-
 # Factory URL & MD5
 
 FACTORY_MAKO="https://dl.google.com/dl/android/aosp/occam-jop40c-factory-cd3dc140.tgz"
@@ -175,7 +174,10 @@ MD5_CRESPO4G="45e55ec74e6b6e69545f3d39e9f8cb64"
 KEY_COMBINATIONS_NEXUS_S="Press and hold Volume Up, then press and hold Power."
 KEY_COMBINATIONS_GALAXY_NEXUS="Press and hold both Volume Up and Volume Down, then press and hold Power."
 KEY_COMBINATIONS_NEXUS_7="Press Power for a second, and press Volume Down when bootloader logo appears."
+KEY_COMBINATIONS_NEXUS_10="Press and hold both Volume Up and Volume Down, then press and hold Power."
+KEY_COMBINATIONS_NEXUS_4="Press and hold Volume Down, then press and hold Power."
 
+# Others
 
 AUTO_MODE_ID="A"
 MANUAL_MODE_ID="M"
