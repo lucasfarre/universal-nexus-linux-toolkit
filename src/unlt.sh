@@ -15,7 +15,7 @@
 #   limitations under the License.
 
 
-# Universal Nexus Linux Toolkit v1.01
+# Universal Nexus Linux Toolkit v2.0
 # by lucasfarre (tatelucas)
 # Apache License 2.0
 # Source: http://code.google.com/p/galaxy-nexus-linux-toolkit/
@@ -29,6 +29,7 @@ PATH="$PATH:$PWD/platform-tools"
 
 # /*** Constants ***/
 
+VERSION="200"
 TRUE=1
 FALSE=0
 INVALID_DEVICE=0
@@ -40,31 +41,49 @@ YES_KEY="Y"
 NO_KEY="N"
 
 PLATFORM_TOOLS_DIR="$PWD/platform-tools"
-PLATFORM_TOOLS_TGZ="$PLATFORM_TOOLS_DIR/platformtools.tgz"
+PLATFORM_TOOLS_TGZ="$PLATFORM_TOOLS_DIR/platformtools$VERSION.tar.gz"
 
-PLATFORM_TOOLS_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/platformtools.tgz"
-PLATFORM_TOOLS_MD5="0cb8d5852087b6bfbd85e0f5fced9332"
+PLATFORM_TOOLS_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/platformtools$VERSION.tar.gz"
+PLATFORM_TOOLS_MD5="6f9a2fa61adf8fdf097ca7d8e698c5b0"
 
-CRESPO_NAME="Nexus S (worldwide version, i9020t and i9023) [crespo]"
-CRESPO_ID=1
-CRESPOA_NAME="Nexus S (850MHz version, i9020a) [crespo]"
-CRESPOA_ID=2
-CRESPOK_NAME="Nexus S (Korea version, m200) [crespo]"
-CRESPOK_ID=3
-CRESPO4G_NAME="Nexus S 4G (d720) [crespo4g]"
-CRESPO4G_ID=4
+# Devices
+
+MAKO_NAME="Nexus 4 [mako]"
+MAKO_ID=1
+
+GROUPER_NAME="Nexus 7 (WiFi) [grouper]"
+GROUPER_ID=3
+
+NEXUS7GSM_NAME="Nexus 7 GSM"
+NEXUS7GSM_ID=11
+
+MANTA_NAME="Nexus 10 [manta]"
+MANTA_ID=2
 
 MAGURO_NAME="Galaxy Nexus (GSM) [maguro]"
-MAGURO_ID=5
+MAGURO_ID=4
 TORO_NAME="Galaxy Nexus (Verizon) [toro]"
-TORO_ID=6
+TORO_ID=5
 TOROPLUS_NAME="Galaxy Nexus (Sprint) [toroplus]"
-TOROPLUS_ID=7
+TOROPLUS_ID=6
 
-GROUPER_NAME="Nexus 7 [grouper]"
-GROUPER_ID=8
+
+CRESPO_NAME="Nexus S (worldwide version, i9020t and i9023) [crespo]"
+CRESPO_ID=7
+CRESPOA_NAME="Nexus S (850MHz version, i9020a) [crespo]"
+CRESPOA_ID=8
+CRESPOK_NAME="Nexus S (Korea version, m200) [crespo]"
+CRESPOK_ID=9
+CRESPO4G_NAME="Nexus S 4G (d720) [crespo4g]"
+CRESPO4G_ID=10
+
+# Dir Names
 
 DEVICES_DIR="$PWD/devices"
+
+MAKO_DIR="$PWD/devices/mako"
+
+MANTA_DIR="$PWD/devices/manta"
 
 CRESPO_DIR="$PWD/devices/crespo"
 CRESPOA_DIR="$PWD/devices/crespoa"
@@ -77,58 +96,86 @@ TOROPLUS_DIR="$PWD/devices/toroplus"
 
 GROUPER_DIR="$PWD/devices/grouper"
 
-CRESPO_DATA_TGZ="$CRESPO_DIR/crespo.tgz"
-CRESPOA_DATA_TGZ="$CRESPOA_DIR/crespoa.tgz"
-CRESPOK_DATA_TGZ="$CRESPOK_DIR/crespok.tgz"
-CRESPO4G_DATA_TGZ="$CRESPO4G_DIR/crespo4g.tgz"
+# .tgz Names
 
-MAGURO_DATA_TGZ="$MAGURO_DIR/maguro.tgz"
-TORO_DATA_TGZ="$TORO_DIR/toro.tgz"
-TOROPLUS_DATA_TGZ="$TOROPLUS_DIR/toroplus.tgz"
+MAKO_DATA_TGZ="$MAKO_DIR/mako$VERSION.tgz"
 
-GROUPER_DATA_TGZ="$GROUPER_DIR/grouper.tgz"
+MANTA_DATA_TGZ="$MAKO_DIR/manta$VERSION.tgz"
 
-CRESPO_DATA_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/crespo.tgz"
-CRESPO_DATA_MD5="9ab761fff4564174c14febd5dd5e3554"
-CRESPOA_DATA_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/crespoa.tgz"
-CRESPOA_DATA_MD5="3b16fce1b360d28d6e3fcd1f947eb55d"
-CRESPOK_DATA_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/crespok.tgz"
-CRESPOK_DATA_MD5="90952165178a741dbe223df0fbda1b76"
-CRESPO4G_DATA_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/crespo4g.tgz"
-CRESPO4G_DATA_MD5="2f6a25c46323fc5ca916677caef013c3"
+GROUPER_DATA_TGZ="$GROUPER_DIR/grouper$VERSION.tgz"
 
-MAGURO_DATA_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/maguro.tgz"
-MAGURO_DATA_MD5="988614b2bcf694e47ceb3226c5f6a776"
-TORO_DATA_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/toro.tgz"
-TORO_DATA_MD5="d660d0a2661735ffdfc02fea3896b594"
-TOROPLUS_DATA_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/toroplus.tgz"
-TOROPLUS_DATA_MD5="3a567ca7678f7b8b7842cb424998522d"
+MAGURO_DATA_TGZ="$MAGURO_DIR/maguro$VERSION.tgz"
+TORO_DATA_TGZ="$TORO_DIR/toro$VERSION.tgz"
+TOROPLUS_DATA_TGZ="$TOROPLUS_DIR/toroplus$VERSION.tgz"
 
-GROUPER_DATA_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/grouper.tgz"
+CRESPO_DATA_TGZ="$CRESPO_DIR/crespo$VERSION.tgz"
+CRESPOA_DATA_TGZ="$CRESPOA_DIR/crespo$VERSION.tgz"
+CRESPOK_DATA_TGZ="$CRESPOK_DIR/crespo$VERSION.tgz"
+CRESPO4G_DATA_TGZ="$CRESPO4G_DIR/crespo4g$VERSION.tgz"
+
+# .tgz URL & MD5
+
+MAKO_DATA_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/mako$VERSION.tgz"
+MAKO_DATA_MD5="00e291bb950eea44f8a8bdea0f7bf9dd"
+
+MANTA_DATA_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/manta$VERSION.tgz"
+MANTA_DATA_MD5="35617aa301075cc436957d1bc2800785"
+
+GROUPER_DATA_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/grouper$VERSION.tgz"
 GROUPER_DATA_MD5="bef40bfc56e276f29674f94cce040a3f"
 
-FACTORY_CRESPO="https://dl.google.com/dl/android/aosp/soju-jro03e-factory-c9f5a67d.tgz"
-MD5_CRESPO="c894e0abfef4f0e68c4646cb4e694047"
-FACTORY_CRESPOA="https://dl.google.com/dl/android/aosp/sojua-jro03e-factory-1ac76773.tgz"
-MD5_CRESPOA="39f0a4079f81882d354f228000ccf8f4"
-FACTORY_CRESPOK="https://dl.google.com/dl/android/aosp/sojuk-imm76d-factory-422adc36.tgz"
-MD5_CRESPOK="393b47d3389232ce4388d019b3ce344b"
-FACTORY_CRESPO4G="https://dl.google.com/dl/android/aosp/sojus-imm76d-factory-10660f4c.tgz"
-MD5_CRESPO4G="198f44f6ea07c2f28e8bdc0932d2fd7d"
+MAGURO_DATA_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/maguro$VERSION.tgz"
+MAGURO_DATA_MD5="89d465242dfa3a67c93e866a42162fb5"
+TORO_DATA_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/toro$VERSION.tgz"
+TORO_DATA_MD5="b02d5b85158421b241f1e1d7ceb63b2c"
+TOROPLUS_DATA_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/toroplus$VERSION.tgz"
+TOROPLUS_DATA_MD5="97cca85616be92b2c47c883be2338fa2"
 
-FACTORY_MAGURO="https://dl.google.com/dl/android/aosp/yakju-jro03c-factory-3174c1e5.tgz"
-MD5_MAGURO="61cad184127144888445987249f06fca"
-FACTORY_TORO="https://dl.google.com/dl/android/aosp/mysid-imm76k-factory-98d21321.tgz"
-MD5_TORO="e76c6fe7d2bc799e5a6168f9dcb8c4ca"
-FACTORY_TOROPLUS=""
-MD5_TOROPLUS=""
+CRESPO_DATA_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/crespo$VERSION.tgz"
+CRESPO_DATA_MD5="21bdc17bd978c81cecb5cd61a20e2109"
+CRESPOA_DATA_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/crespo$VERSION.tgz"
+CRESPOA_DATA_MD5="21bdc17bd978c81cecb5cd61a20e2109"
+CRESPOK_DATA_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/crespo$VERSION.tgz"
+CRESPOK_DATA_MD5="21bdc17bd978c81cecb5cd61a20e2109"
+CRESPO4G_DATA_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/crespo4g$VERSION.tgz"
+CRESPO4G_DATA_MD5="3bfc331983d84d65ac2ecd5ba9224b1a"
 
-FACTORY_GROUPER="https://dl.google.com/dl/android/aosp/nakasi-jro03d-factory-e102ba72.tgz"
-MD5_GROUPER="7f79d40f03bab0f9b2871eaae74ac61e"
+
+# Factory URL & MD5
+
+FACTORY_MAKO="https://dl.google.com/dl/android/aosp/occam-jop40c-factory-cd3dc140.tgz"
+MD5_MAKO="d8cef2e9aebb142d764ee70098eae237"
+
+FACTORY_MANTA="https://dl.google.com/dl/android/aosp/mantaray-jop40c-factory-87340b80.tgz"
+MD5_MANTA="dca07ce8e96b77896cfb6f1818378c1c"
+
+FACTORY_GROUPER="https://dl.google.com/dl/android/aosp/nakasi-jop40c-factory-6aabb391.tgz"
+MD5_GROUPER="3689d95c00c45ae4ed53011083420730"
+FACTORY_NEXUS7GSM="https://dl.google.com/dl/android/aosp/nakasig-jop40c-factory-a0431f67.tgz"
+MD5_NEXUS7GSM="e681477b3babbafb6fc6891438a254e9"
+
+FACTORY_MAGURO="https://dl.google.com/dl/android/aosp/takju-jop40c-factory-1a47c890.tgz"
+MD5_MAGURO="1e62833203f9fd3aa63de9b59af784ca"
+FACTORY_TORO="https://dl.google.com/dl/android/aosp/mysid-jro03o-factory-f17426e6.tgz"
+MD5_TORO="1df6a2a7385c4745193fe82bf2a87f78"
+FACTORY_TOROPLUS="https://dl.google.com/dl/android/aosp/mysidspr-fh05-factory-8cb5208b.tgz"
+MD5_TOROPLUS="7b3c4c37dd64a664427d3829e2491bee"
+
+FACTORY_CRESPO="https://dl.google.com/dl/android/aosp/soju-jzo54k-factory-36602333.tgz"
+MD5_CRESPO="788233dca5954532acda63039f814b4d"
+FACTORY_CRESPOA="https://dl.google.com/dl/android/aosp/sojua-jzo54k-factory-1121b619.tgz"
+MD5_CRESPOA="9cceb30ac64c914c06df5d16f5af2a52"
+FACTORY_CRESPOK="https://dl.google.com/dl/android/aosp/sojuk-jro03e-factory-93a21b70.tgz"
+MD5_CRESPOK="3f31acd14b3b464881886d2e8d2d94f4"
+FACTORY_CRESPO4G="https://dl.google.com/dl/android/aosp/sojus-jro03r-factory-59a247f5.tgz"
+MD5_CRESPO4G="45e55ec74e6b6e69545f3d39e9f8cb64"
+
+# Key Combinations
 
 KEY_COMBINATIONS_NEXUS_S="Press and hold Volume Up, then press and hold Power."
 KEY_COMBINATIONS_GALAXY_NEXUS="Press and hold both Volume Up and Volume Down, then press and hold Power."
 KEY_COMBINATIONS_NEXUS_7="Press Power for a second, and press Volume Down when bootloader logo appears."
+
 
 AUTO_MODE_ID="A"
 MANUAL_MODE_ID="M"
@@ -139,43 +186,13 @@ MANUAL_MODE_NAME="Manual [FASTBOOT]"
 STANDARD_CWM_ID="S"
 TOUCH_CWM_ID="T"
 
-HOST="server14.000webhost.com"
-USER="a2897111"
-PASSWORD="gnlt92"
-
-LOG_NAME="`date +%F`-`date +%X``date +%:z`.log"
-LOGS_DIR="$PWD/.logs"
-
-UNLOCK_COUNTER=0
-RECOVERY_COUNTER=0
-ROOT_COUNTER=0
-LOCK_COUNTER=0
-FACTORY_COUNTER=0
-
-
-# Log File Initialization
-
-logFileInitialization () {
-  if [ ! -d $LOGS_DIR ];
-  then
-    mkdir $LOGS_DIR
-  fi
-  cd $LOGS_DIR
-  #exec 2>> $LOG_NAME
-  date -R >> $LOG_NAME
-  uname -a >> $LOG_NAME
-  echo "" >> $LOG_NAME
-  echo "Errors" >> $LOG_NAME
-  echo "" >> $LOG_NAME
-}
-
 
 # /*** Functions ***/ 
 
 printHeader () {
   clear
   echo "********************************************************************************"
-  echo "*               Universal Nexus Linux Toolkit v1.01 by tatelucas               *"
+  echo "*               Universal Nexus Linux Toolkit v2.0 by tatelucas                *"
   echo "********************************************************************************"
 }
 
@@ -194,14 +211,18 @@ done
 printDeviceChooser () {
   echo "Nexus Devices"
   echo ""
+  echo "$MAKO_ID. $MAKO_NAME"
+# echo "$NEXUS7GSM_ID. $NEXUS7GSM_NAME"
+  echo "$MANTA_ID. $MANTA_NAME"
+  echo "$GROUPER_ID. $GROUPER_NAME"
+  echo "$MAGURO_ID. $MAGURO_NAME"
+  echo "$TORO_ID. $TORO_NAME"
+  echo "$TOROPLUS_ID. $TOROPLUS_NAME"
   echo "$CRESPO_ID. $CRESPO_NAME"
   echo "$CRESPOA_ID. $CRESPOA_NAME"
   echo "$CRESPOK_ID. $CRESPOK_NAME"
   echo "$CRESPO4G_ID. $CRESPO4G_NAME"
-  echo "$MAGURO_ID. $MAGURO_NAME"
-  echo "$TORO_ID. $TORO_NAME"
-  echo "$TOROPLUS_ID. $TOROPLUS_NAME"
-  echo "$GROUPER_ID. $GROUPER_NAME"
+  
   echo ""
   echo "$EXIT_KEY. Exit"
   echo ""
@@ -283,6 +304,24 @@ setDeviceVariables () {
                   FACTORY_URL=$FACTORY_GROUPER
                   MD5=$MD5_GROUPER
                   KEY_COMBINATIONS=$KEY_COMBINATIONS_NEXUS_7;;   
+                  
+    $MAKO_ID) DEVICE_NAME=$MAKO_NAME
+                DEVICE_DIR=$MAKO_DIR
+                DEVICE_DATA_URL=$MAKO_DATA_URL
+                DEVICE_DATA_MD5=$MAKO_DATA_MD5
+                DEVICE_DATA_TGZ=$MAKO_DATA_TGZ
+                FACTORY_URL=$FACTORY_MAKO
+                MD5=$MD5_MAKO
+                KEY_COMBINATIONS=$KEY_COMBINATIONS_NEXUS_4;;
+                
+    $MANTA_ID) DEVICE_NAME=$MANTA_NAME
+                 DEVICE_DIR=$MANTA_DIR
+                 DEVICE_DATA_URL=$MANTA_DATA_URL
+                 DEVICE_DATA_MD5=$MANTA_DATA_MD5
+                 DEVICE_DATA_TGZ=$MANTA_DATA_TGZ
+                 FACTORY_URL=$FACTORY_MANTA
+                 MD5=$MD5_MANTA
+                 KEY_COMBINATIONS=$KEY_COMBINATIONS_NEXUS_10;;
    
     $EXIT_KEY)  clear && exit;;
    
@@ -524,7 +563,7 @@ runBootloaderCommands () {
 
 rebootBootloader () {
   adb reboot bootloader
-  #sleep 5  There's no need to add wait time because Fastboot always wait for device.
+# sleep 5  There's no need to add wait time because Fastboot always wait for device.
 }
 
 rebootAndroid () {
@@ -617,14 +656,14 @@ printRootHeader () {
 
 printRootManual () {
   echo "4. Wait for automatically reboot in Recovery Mode."
-  echo "5. Go to 'install zip from sdcard' >> 'choose zip from sdcard' >> 'GNLT'"
+  echo "5. Go to 'install zip from sdcard' >> 'choose zip from sdcard' >> 'UNLT'"
   echo "   and choose 'su.zip'."
   echo "6. Go to 'Go back' >> 'reboot system now'."
 }
 
 runRootCommands () {
-  adb shell mkdir /sdcard/GNLT
-  adb push $DEVICE_DIR/root/su.zip /sdcard/GNLT
+  adb shell mkdir /sdcard/UNLT
+  adb push $DEVICE_DIR/root/su.zip /sdcard/UNLT
   adb reboot recovery
 }
 
@@ -738,45 +777,7 @@ runLockCommands () {
 
 exitToolkit () {
   EXIT=$TRUE
-  logFileStatistics
-  logFileSend
   clear
-}
-
-logFileStatistics () {
-  cd $LOGS_DIR
-  echo "" >> $LOG_NAME
-  echo "Execution Statistics" >> $LOG_NAME
-  echo "" >> $LOG_NAME
-  echo "Selected Device: $DEVICE_NAME" >> $LOG_NAME
-  echo "Selected Mode: $SELECTED_MODE" >> $LOG_NAME
-  echo "Unlock Bootloader: $UNLOCK_COUNTER" >> $LOG_NAME
-  echo "Flash ClockworkMod Recovery: $RECOVERY_COUNTER" >> $LOG_NAME
-  echo "Root device: $ROOT_COUNTER" >> $LOG_NAME
-  echo "Flash Google Factory Image: $FACTORY_COUNTER" >> $LOG_NAME
-  echo "Lock Bootloader: $LOCK_COUNTER" >> $LOG_NAME
-}
-
-logFileSend () {
-  cd $LOGS_DIR
-  echo "Do you want to send anonymous usage information and ocurred errors to the"
-  echo "developer?"
-  echo "This is very important to correct bugs and make a better user experience."
-  echo -n "It will only take around 3 seconds. Please type [Y/N]: "
-  read KEY
-  while [ $KEY != "Y" ] && [ $KEY != "N" ]
-  do
-    read KEY
-  done
-  if [ $KEY == "Y" ];
-  then
-    ftp -in $HOST << END
-      user $USER $PASSWORD
-      cd logfiles
-      put $LOG_NAME
-      bye
-END
-  fi
 }
 
 # /*** Main ***/
