@@ -98,9 +98,9 @@ GROUPER_DIR="$PWD/devices/grouper"
 
 # .tgz Names
 
-MAKO_DATA_TGZ="$MAKO_DIR/mako$VERSION.tgz"
+MAKO_DATA_TGZ="$MAKO_DIR/mako$VERSION.tar.gz"
 
-MANTA_DATA_TGZ="$MAKO_DIR/manta$VERSION.tgz"
+MANTA_DATA_TGZ="$MANTA_DIR/manta$VERSION.tar.gz"
 
 GROUPER_DATA_TGZ="$GROUPER_DIR/grouper$VERSION.tgz"
 
@@ -115,11 +115,11 @@ CRESPO4G_DATA_TGZ="$CRESPO4G_DIR/crespo4g$VERSION.tgz"
 
 # .tgz URL & MD5
 
-MAKO_DATA_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/mako$VERSION.tgz"
-MAKO_DATA_MD5="00e291bb950eea44f8a8bdea0f7bf9dd"
+MAKO_DATA_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/mako$VERSION.tar.gz"
+MAKO_DATA_MD5="8c1db92515aab3b5ef05c7ecb0400034"
 
-MANTA_DATA_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/manta$VERSION.tgz"
-MANTA_DATA_MD5="35617aa301075cc436957d1bc2800785"
+MANTA_DATA_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/manta$VERSION.tar.gz"
+MANTA_DATA_MD5="735b93491764e5675c44610cb80349e9"
 
 GROUPER_DATA_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/grouper$VERSION.tgz"
 GROUPER_DATA_MD5="bef40bfc56e276f29674f94cce040a3f"
@@ -785,7 +785,6 @@ exitToolkit () {
 # /*** Main ***/
 
 ERROR=$FALSE
-logFileInitialization
 deviceChooser
 platformTools
 deviceData
