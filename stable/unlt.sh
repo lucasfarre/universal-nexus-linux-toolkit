@@ -308,7 +308,6 @@ setDeviceVariables () {
 # Direcories creation for selected device
   
 dirMaker() {
-  mkdir $PLATFORM_TOOLS_DIR
   mkdir $DEVICES_DIR
   mkdir $DEVICE_DIR
   mkdir $DEVICE_DIR/recovery
