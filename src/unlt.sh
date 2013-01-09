@@ -507,6 +507,8 @@ printAndroidDebuggingManual () {
   echo "1. Power on your device and connect the device to your PC via USB."
   echo "2. Go to 'Settings' >> 'Developer options', turn ON the switch,"
   echo "   and check 'USB debugging'. You're now in Android Debugging Mode!"
+  echo "   Note: If you're running Android 4.2 or above, first go to"
+  echo "         'Settings' >> 'About phone' and tap 7 times on 'Build number'."
   echo -n "3. Do you want to start the process? [$YES_KEY/$NO_KEY]: "
   read KEY
   echo ""
