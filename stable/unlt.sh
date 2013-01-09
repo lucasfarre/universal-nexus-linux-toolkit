@@ -92,14 +92,21 @@ CRESPO4G_DIR="$PWD/devices/crespo4g"
 
 # Platform Tools Download
 
+PLATFORM_TOOLS_VERSION="200"
+
 PLATFORM_TOOLS_DIR="$PWD/platform-tools"
-PLATFORM_TOOLS_TGZ="$PLATFORM_TOOLS_DIR/platformtools$VERSION.tar.gz"
 
-PLATFORM_TOOLS_URL_32="http://galaxy-nexus-linux-toolkit.googlecode.com/files/platformtools$VERSION.tar.gz"
-PLATFORM_TOOLS_MD5="6f9a2fa61adf8fdf097ca7d8e698c5b0"
+PLATFORM_TOOLS_32_TGZ="$PLATFORM_TOOLS_DIR/platformtools$PLATFORM_TOOLS_VERSION.tar.gz"
+PLATFORM_TOOLS_32_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/platformtools$PLATFORM_TOOLS_VERSION.tar.gz"
+PLATFORM_TOOLS_32_MD5="6f9a2fa61adf8fdf097ca7d8e698c5b0"
 
-PLATFORM_TOOLS_URL_64="http://galaxy-nexus-linux-toolkit.googlecode.com/files/platformtools$VERSION.tar.gz"
-PLATFORM_TOOLS_URL_MAC="http://galaxy-nexus-linux-toolkit.googlecode.com/files/platformtools$VERSION.tar.gz"
+PLATFORM_TOOLS_64_TGZ="$PLATFORM_TOOLS_DIR/platformtools$PLATFORM_TOOLS_VERSION.tar.gz"
+PLATFORM_TOOLS_64_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/platformtools$PLATFORM_TOOLS_VERSION.tar.gz"
+PLATFORM_TOOLS_64_MD5="6f9a2fa61adf8fdf097ca7d8e698c5b0"
+
+PLATFORM_TOOLS_MAC_TGZ="$PLATFORM_TOOLS_DIR/platformtools$PLATFORM_TOOLS_VERSION.tar.gz"
+PLATFORM_TOOLS_MAC_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/platformtools$PLATFORM_TOOLS_VERSION.tar.gz"
+PLATFORM_TOOLS_MAC_MD5="6f9a2fa61adf8fdf097ca7d8e698c5b0"
 
 # CWM Recovery Download
 
@@ -340,21 +347,21 @@ downloadPlatformTools () {
     echo "Downloading Platform Tools..."
     mkdir $PLATFORM_TOOLS_DIR
     cd $PLATFORM_TOOLS_DIR
-    if [ "`uname -s`" -eq "Darwin" ];	# Mac OS
-	then
+    if [ "`uname -s`" == "Darwin" ];	# Mac OS
+    then
 	  PLATFORM_TOOLS_URL=$PLATFORM_TOOLS_MAC_URL
 	  PLATFORM_TOOLS_TGZ=$PLATFORM_TOOLS_MAC_TGZ
 	  PLATFORM_TOOLS_MD5=$PLATFORM_TOOLS_MAC_MD5
-	elif [ "`uname -m`" -eq "x86_64" ];
-	then
+    elif [ "`uname -m`" == "x86_64" ];
+    then
 	  PLATFORM_TOOLS_URL=$PLATFORM_TOOLS_32_URL
 	  PLATFORM_TOOLS_TGZ=$PLATFORM_TOOLS_32_TGZ
 	  PLATFORM_TOOLS_MD5=$PLATFORM_TOOLS_32_MD5
-	else
+    else
 	  PLATFORM_TOOLS_URL=$PLATFORM_TOOLS_32_URL
 	  PLATFORM_TOOLS_TGZ=$PLATFORM_TOOLS_32_TGZ
 	  PLATFORM_TOOLS_MD5=$PLATFORM_TOOLS_32_MD5
-	fi
+    fi
     wget $PLATFORM_TOOLS_URL
   fi
 }
@@ -500,6 +507,8 @@ printAndroidDebuggingManual () {
   echo "1. Power on your device and connect the device to your PC via USB."
   echo "2. Go to 'Settings' >> 'Developer options', turn ON the switch,"
   echo "   and check 'USB debugging'. You're now in Android Debugging Mode!"
+  echo "   Note: If you're running Android 4.2 or above, first go to"
+  echo "         'Settings' >> 'About phone' and tap 7 times on 'Build number'."
   echo -n "3. Do you want to start the process? [$YES_KEY/$NO_KEY]: "
   read KEY
   echo ""
