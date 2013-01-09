@@ -15,7 +15,7 @@
 #   limitations under the License.
 
 
-# Universal Nexus Linux Toolkit v2.0
+# Universal Nexus Linux Toolkit v2.1.0
 # by lucasfarre (tatelucas)
 # Apache License 2.0
 # Source: http://code.google.com/p/galaxy-nexus-linux-toolkit/
@@ -29,7 +29,7 @@ PATH="$PATH:$PWD/platform-tools"
 
 # /*** Constants ***/
 
-VERSION="200"
+VERSION="210"
 TRUE=1
 FALSE=0
 INVALID_DEVICE=0
@@ -40,42 +40,35 @@ RETURN_KEY="R"
 YES_KEY="Y"
 NO_KEY="N"
 
-PLATFORM_TOOLS_DIR="$PWD/platform-tools"
-PLATFORM_TOOLS_TGZ="$PLATFORM_TOOLS_DIR/platformtools$VERSION.tar.gz"
-
-PLATFORM_TOOLS_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/platformtools$VERSION.tar.gz"
-PLATFORM_TOOLS_MD5="6f9a2fa61adf8fdf097ca7d8e698c5b0"
-
 # Devices
 
 MAKO_NAME="Nexus 4 [mako]"
 MAKO_ID=1
 
-GROUPER_NAME="Nexus 7 (WiFi) [grouper]"
-GROUPER_ID=3
-
-NEXUS7GSM_NAME="Nexus 7 GSM"
-NEXUS7GSM_ID=11
-
 MANTA_NAME="Nexus 10 [manta]"
 MANTA_ID=2
 
-MAGURO_NAME="Galaxy Nexus (GSM) [maguro]"
-MAGURO_ID=4
-TORO_NAME="Galaxy Nexus (Verizon) [toro]"
-TORO_ID=5
-TOROPLUS_NAME="Galaxy Nexus (Sprint) [toroplus]"
-TOROPLUS_ID=6
+GROUPER_NAME="Nexus 7 (WiFi) [grouper]"
+GROUPER_ID=3
 
+TILAPIA_NAME="Nexus 7 (GSM) [tilapia]"
+TILAPIA_ID=4
+
+MAGURO_NAME="Galaxy Nexus (GSM) [maguro]"
+MAGURO_ID=5
+TORO_NAME="Galaxy Nexus (Verizon) [toro]"
+TORO_ID=6
+TOROPLUS_NAME="Galaxy Nexus (Sprint) [toroplus]"
+TOROPLUS_ID=7
 
 CRESPO_NAME="Nexus S (worldwide version, i9020t and i9023) [crespo]"
-CRESPO_ID=7
+CRESPO_ID=8
 CRESPOA_NAME="Nexus S (850MHz version, i9020a) [crespo]"
-CRESPOA_ID=8
+CRESPOA_ID=9
 CRESPOK_NAME="Nexus S (Korea version, m200) [crespo]"
-CRESPOK_ID=9
+CRESPOK_ID=10
 CRESPO4G_NAME="Nexus S 4G (d720) [crespo4g]"
-CRESPO4G_ID=10
+CRESPO4G_ID=11
 
 # Dir Names
 
@@ -85,76 +78,77 @@ MAKO_DIR="$PWD/devices/mako"
 
 MANTA_DIR="$PWD/devices/manta"
 
-CRESPO_DIR="$PWD/devices/crespo"
-CRESPOA_DIR="$PWD/devices/crespoa"
-CRESPOK_DIR="$PWD/devices/crespok"
-CRESPO4G_DIR="$PWD/devices/crespo4g"
+GROUPER_DIR="$PWD/devices/grouper"
+TILAPIA_DIR="$PWD/devices/tilapia"
 
 MAGURO_DIR="$PWD/devices/maguro"
 TORO_DIR="$PWD/devices/toro"
 TOROPLUS_DIR="$PWD/devices/toroplus"
 
-GROUPER_DIR="$PWD/devices/grouper"
+CRESPO_DIR="$PWD/devices/crespo"
+CRESPOA_DIR="$PWD/devices/crespoa"
+CRESPOK_DIR="$PWD/devices/crespok"
+CRESPO4G_DIR="$PWD/devices/crespo4g"
 
-# .tgz Names
+# Platform Tools Download
 
-MAKO_DATA_TGZ="$MAKO_DIR/mako$VERSION.tar.gz"
+PLATFORM_TOOLS_VERSION="200"
 
-MANTA_DATA_TGZ="$MANTA_DIR/manta$VERSION.tar.gz"
+PLATFORM_TOOLS_DIR="$PWD/platform-tools"
 
-GROUPER_DATA_TGZ="$GROUPER_DIR/grouper$VERSION.tgz"
+PLATFORM_TOOLS_32_TGZ="$PLATFORM_TOOLS_DIR/platformtools$PLATFORM_TOOLS_VERSION.tar.gz"
+PLATFORM_TOOLS_32_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/platformtools$PLATFORM_TOOLS_VERSION.tar.gz"
+PLATFORM_TOOLS_32_MD5="6f9a2fa61adf8fdf097ca7d8e698c5b0"
 
-MAGURO_DATA_TGZ="$MAGURO_DIR/maguro$VERSION.tgz"
-TORO_DATA_TGZ="$TORO_DIR/toro$VERSION.tgz"
-TOROPLUS_DATA_TGZ="$TOROPLUS_DIR/toroplus$VERSION.tgz"
+PLATFORM_TOOLS_64_TGZ="$PLATFORM_TOOLS_DIR/platformtools$PLATFORM_TOOLS_VERSION.tar.gz"
+PLATFORM_TOOLS_64_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/platformtools$PLATFORM_TOOLS_VERSION.tar.gz"
+PLATFORM_TOOLS_64_MD5="6f9a2fa61adf8fdf097ca7d8e698c5b0"
 
-CRESPO_DATA_TGZ="$CRESPO_DIR/crespo$VERSION.tgz"
-CRESPOA_DATA_TGZ="$CRESPOA_DIR/crespo$VERSION.tgz"
-CRESPOK_DATA_TGZ="$CRESPOK_DIR/crespo$VERSION.tgz"
-CRESPO4G_DATA_TGZ="$CRESPO4G_DIR/crespo4g$VERSION.tgz"
+PLATFORM_TOOLS_MAC_TGZ="$PLATFORM_TOOLS_DIR/platformtools$PLATFORM_TOOLS_VERSION.tar.gz"
+PLATFORM_TOOLS_MAC_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/platformtools$PLATFORM_TOOLS_VERSION.tar.gz"
+PLATFORM_TOOLS_MAC_MD5="6f9a2fa61adf8fdf097ca7d8e698c5b0"
 
-# .tgz URL & MD5
+# CWM Recovery Download
 
-MAKO_DATA_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/mako$VERSION.tar.gz"
-MAKO_DATA_MD5="8c1db92515aab3b5ef05c7ecb0400034"
+CWM_COMMON_URL="http://download2.clockworkmod.com/recoveries/recovery-clockwork"
+CWM_TOUCH_COMMON_URL="http://download2.clockworkmod.com/recoveries/recovery-clockwork-touch"
 
-MANTA_DATA_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/manta$VERSION.tar.gz"
-MANTA_DATA_MD5="735b93491764e5675c44610cb80349e9"
+MAKO_CWM_VERSION="6.0.2.3-mako"
 
-GROUPER_DATA_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/grouper$VERSION.tgz"
-GROUPER_DATA_MD5="bef40bfc56e276f29674f94cce040a3f"
+MANTA_CWM_VERSION="6.0.2.3-manta"
 
-MAGURO_DATA_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/maguro$VERSION.tgz"
-MAGURO_DATA_MD5="89d465242dfa3a67c93e866a42162fb5"
-TORO_DATA_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/toro$VERSION.tgz"
-TORO_DATA_MD5="b02d5b85158421b241f1e1d7ceb63b2c"
-TOROPLUS_DATA_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/toroplus$VERSION.tgz"
-TOROPLUS_DATA_MD5="97cca85616be92b2c47c883be2338fa2"
+GROUPER_CWM_VERISON="6.0.2.3-grouper"
+TILAPIA_CWM_VERSION="6.0.2.3-tilapia"
 
-CRESPO_DATA_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/crespo$VERSION.tgz"
-CRESPO_DATA_MD5="21bdc17bd978c81cecb5cd61a20e2109"
-CRESPOA_DATA_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/crespo$VERSION.tgz"
-CRESPOA_DATA_MD5="21bdc17bd978c81cecb5cd61a20e2109"
-CRESPOK_DATA_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/crespo$VERSION.tgz"
-CRESPOK_DATA_MD5="21bdc17bd978c81cecb5cd61a20e2109"
-CRESPO4G_DATA_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/crespo4g$VERSION.tgz"
-CRESPO4G_DATA_MD5="3bfc331983d84d65ac2ecd5ba9224b1a"
+MAGURO_CWM_VERSION="6.0.2.3-maguro"
+TORO_CWM_VERSION="6.0.2.3-toro"
+TOROPLUS_CWM_VERSION="6.0.2.3-toroplus"
+
+CRESPO_CWM_VERSION="6.0.2.5-crespo"
+CRESPOA_CWM_VERSION="6.0.2.5-crespo"
+CRESPOK_CWM_VERSION="6.0.2.5-crespo"
+CRESPO4G_CWM_VERSION="6.0.2.5-crespo4g"
+
+# Root Zip Download
+
+SUPERSU_VERSION="0.99"
+ROOT_ZIP_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/CWM-SuperSU-v$SUPERSU_VERSION.zip"
 
 # Factory URL & MD5
 
 FACTORY_MAKO="https://dl.google.com/dl/android/aosp/occam-jop40c-factory-cd3dc140.tgz"
 MD5_MAKO="d8cef2e9aebb142d764ee70098eae237"
 
-FACTORY_MANTA="https://dl.google.com/dl/android/aosp/mantaray-jop40c-factory-87340b80.tgz"
-MD5_MANTA="dca07ce8e96b77896cfb6f1818378c1c"
+FACTORY_MANTA="https://dl.google.com/dl/android/aosp/mantaray-jop40c-factory-0d641789.tgz"
+MD5_MANTA="fa25d6871890dc27fb0f881200d7d79d"
 
-FACTORY_GROUPER="https://dl.google.com/dl/android/aosp/nakasi-jop40c-factory-6aabb391.tgz"
-MD5_GROUPER="3689d95c00c45ae4ed53011083420730"
-FACTORY_NEXUS7GSM="https://dl.google.com/dl/android/aosp/nakasig-jop40c-factory-a0431f67.tgz"
-MD5_NEXUS7GSM="e681477b3babbafb6fc6891438a254e9"
+FACTORY_GROUPER="https://dl.google.com/dl/android/aosp/nakasi-jop40d-factory-6ac58a1a.tgz"
+MD5_GROUPER="27a9a10cfc75b100ba63afa35c08f3db"
+FACTORY_TILAPIA="https://dl.google.com/dl/android/aosp/nakasig-jop40d-factory-efcec044.tgz"
+MD5_TILAPIA="e5d22e0791ab2f5d470bba77fbd6771d"
 
-FACTORY_MAGURO="https://dl.google.com/dl/android/aosp/takju-jop40c-factory-1a47c890.tgz"
-MD5_MAGURO="1e62833203f9fd3aa63de9b59af784ca"
+FACTORY_MAGURO="https://dl.google.com/dl/android/aosp/takju-jop40d-factory-e4d13f14.tgz"
+MD5_MAGURO="351926836d314848ed4292bbc499ff36"
 FACTORY_TORO="https://dl.google.com/dl/android/aosp/mysid-jro03o-factory-f17426e6.tgz"
 MD5_TORO="1df6a2a7385c4745193fe82bf2a87f78"
 FACTORY_TOROPLUS="https://dl.google.com/dl/android/aosp/mysidspr-fh05-factory-8cb5208b.tgz"
@@ -194,7 +188,7 @@ TOUCH_CWM_ID="T"
 printHeader () {
   clear
   echo "********************************************************************************"
-  echo "*               Universal Nexus Linux Toolkit v2.0 by tatelucas                *"
+  echo "*               Universal Nexus Linux Toolkit v2.1.0 by tatelucas              *"
   echo "********************************************************************************"
 }
 
@@ -214,9 +208,9 @@ printDeviceChooser () {
   echo "Nexus Devices"
   echo ""
   echo "$MAKO_ID. $MAKO_NAME"
-# echo "$NEXUS7GSM_ID. $NEXUS7GSM_NAME"
   echo "$MANTA_ID. $MANTA_NAME"
   echo "$GROUPER_ID. $GROUPER_NAME"
+  echo "$TILAPIA_ID. $TILAPIA_NAME"
   echo "$MAGURO_ID. $MAGURO_NAME"
   echo "$TORO_ID. $TORO_NAME"
   echo "$TOROPLUS_ID. $TOROPLUS_NAME"
@@ -237,90 +231,77 @@ setDeviceVariables () {
   case $DEVICE in
     $CRESPO_ID) DEVICE_NAME=$CRESPO_NAME
                 DEVICE_DIR=$CRESPO_DIR
-                DEVICE_DATA_URL=$CRESPO_DATA_URL
-                DEVICE_DATA_MD5=$CRESPO_DATA_MD5
-                DEVICE_DATA_TGZ=$CRESPO_DATA_TGZ
+                CWM_VERSION=$CRESPO_CWM_VERSION
                 FACTORY_URL=$FACTORY_CRESPO
                 MD5=$MD5_CRESPO
                 KEY_COMBINATIONS=$KEY_COMBINATIONS_NEXUS_S;;
                 
     $CRESPOA_ID) DEVICE_NAME=$CRESPOA_NAME
                  DEVICE_DIR=$CRESPOA_DIR
-                 DEVICE_DATA_URL=$CRESPOA_DATA_URL
-                 DEVICE_DATA_MD5=$CRESPOA_DATA_MD5
-                 DEVICE_DATA_TGZ=$CRESPOA_DATA_TGZ
+                 CWM_VERSION=$CRESPOA_CWM_VERSION
                  FACTORY_URL=$FACTORY_CRESPOA
                  MD5=$MD5_CRESPOA
                  KEY_COMBINATIONS=$KEY_COMBINATIONS_NEXUS_S;;
     
     $CRESPOK_ID) DEVICE_NAME=$CRESPOK_NAME
                  DEVICE_DIR=$CRESPOK_DIR
-                 DEVICE_DATA_URL=$CRESPOK_DATA_URL
-                 DEVICE_DATA_MD5=$CRESPOK_DATA_MD5
-                 DEVICE_DATA_TGZ=$CRESPOK_DATA_TGZ
+                 CWM_VERSION=$CRESPOK_CWM_VERSION
                  FACTORY_URL=$FACTORY_CRESPOK
                  MD5=$MD5_CRESPOK
                  KEY_COMBINATIONS=$KEY_COMBINATIONS_NEXUS_S;;
     
     $CRESPO4G_ID) DEVICE_NAME=$CRESPO4G_NAME
                   DEVICE_DIR=$CRESPO4G_DIR
-                  DEVICE_DATA_URL=$CRESPO4G_DATA_URL
-                  DEVICE_DATA_MD5=$CRESPO4G_DATA_MD5
-                  DEVICE_DATA_TGZ=$CRESPO4G_DATA_TGZ
+                  CWM_VERSION=$CRESPO4G_CWM_VERSION
                   FACTORY_URL=$FACTORY_CRESPO4G
                   MD5=$MD5_CRESPO4G
                   KEY_COMBINATIONS=$KEY_COMBINATIONS_NEXUS_S;;        
                 
     $MAGURO_ID) DEVICE_NAME=$MAGURO_NAME
                 DEVICE_DIR=$MAGURO_DIR
-                DEVICE_DATA_URL=$MAGURO_DATA_URL
-                DEVICE_DATA_MD5=$MAGURO_DATA_MD5
-                DEVICE_DATA_TGZ=$MAGURO_DATA_TGZ
+                CWM_VERSION=$MAGURO_CWM_VERSION
                 FACTORY_URL=$FACTORY_MAGURO
                 MD5=$MD5_MAGURO
                 KEY_COMBINATIONS=$KEY_COMBINATIONS_GALAXY_NEXUS;;
                 
     $TORO_ID) DEVICE_NAME=$TORO_NAME
               DEVICE_DIR=$TORO_DIR
-              DEVICE_DATA_URL=$TORO_DATA_URL
-              DEVICE_DATA_MD5=$TORO_DATA_MD5
-              DEVICE_DATA_TGZ=$TORO_DATA_TGZ
+              CWM_VERSION=$TORO_CWM_VERSION
               FACTORY_URL=$FACTORY_TORO
               MD5=$MD5_TORO
               KEY_COMBINATIONS=$KEY_COMBINATIONS_GALAXY_NEXUS;;
               
     $TOROPLUS_ID) DEVICE_NAME=$TOROPLUS_NAME
                   DEVICE_DIR=$TOROPLUS_DIR
-                  DEVICE_DATA_URL=$TOROPLUS_DATA_URL
-                  DEVICE_DATA_MD5=$TOROPLUS_DATA_MD5
-                  DEVICE_DATA_TGZ=$TOROPLUS_DATA_TGZ
+                  CWM_VERSION=$TOROPLUS_CWM_VERSION
                   FACTORY_URL=$FACTORY_TOROPLUS
                   MD5=$MD5_TOROPLUS
                   KEY_COMBINATIONS=$KEY_COMBINATIONS_GALAXY_NEXUS;;
                   
     $GROUPER_ID)  DEVICE_NAME=$GROUPER_NAME
                   DEVICE_DIR=$GROUPER_DIR
-                  DEVICE_DATA_URL=$GROUPER_DATA_URL
-                  DEVICE_DATA_MD5=$GROUPER_DATA_MD5
-                  DEVICE_DATA_TGZ=$GROUPER_DATA_TGZ
+                  CWM_VERSION=$GROUPER_CWM_VERSION
                   FACTORY_URL=$FACTORY_GROUPER
                   MD5=$MD5_GROUPER
                   KEY_COMBINATIONS=$KEY_COMBINATIONS_NEXUS_7;;   
                   
-    $MAKO_ID) DEVICE_NAME=$MAKO_NAME
+    $TILAPIA_ID)  DEVICE_NAME=$TILAPIA_NAME
+                  DEVICE_DIR=$TILAPIA_DIR
+                  CWM_VERSION=$TILAPIA_CWM_VERSION
+                  FACTORY_URL=$FACTORY_TILAPIA
+                  MD5=$MD5_TILAPIA
+                  KEY_COMBINATIONS=$KEY_COMBINATIONS_NEXUS_7;;                  
+                     
+    $MAKO_ID) 	DEVICE_NAME=$MAKO_NAME
                 DEVICE_DIR=$MAKO_DIR
-                DEVICE_DATA_URL=$MAKO_DATA_URL
-                DEVICE_DATA_MD5=$MAKO_DATA_MD5
-                DEVICE_DATA_TGZ=$MAKO_DATA_TGZ
+                CWM_VERSION=$MAKO_CWM_VERSION
                 FACTORY_URL=$FACTORY_MAKO
                 MD5=$MD5_MAKO
                 KEY_COMBINATIONS=$KEY_COMBINATIONS_NEXUS_4;;
                 
-    $MANTA_ID) DEVICE_NAME=$MANTA_NAME
+    $MANTA_ID)	 DEVICE_NAME=$MANTA_NAME
                  DEVICE_DIR=$MANTA_DIR
-                 DEVICE_DATA_URL=$MANTA_DATA_URL
-                 DEVICE_DATA_MD5=$MANTA_DATA_MD5
-                 DEVICE_DATA_TGZ=$MANTA_DATA_TGZ
+                 CWM_VERSION=$MANTA_CWM_VERSION
                  FACTORY_URL=$FACTORY_MANTA
                  MD5=$MD5_MANTA
                  KEY_COMBINATIONS=$KEY_COMBINATIONS_NEXUS_10;;
@@ -331,14 +312,28 @@ setDeviceVariables () {
   esac
 }
 
+# Direcories creation for selected device
+  
+dirMaker() {
+  mkdir $DEVICES_DIR
+  mkdir $DEVICE_DIR
+  mkdir $DEVICE_DIR/recovery
+  mkdir $DEVICE_DIR/recovery/standard
+  mkdir $DEVICE_DIR/recovery/touch
+  mkdir $DEVICE_DIR/root/
+  mkdir $DEVICE_DIR/factory
+}
+
+
 # Android SDK platform tools download
+
 platformTools () {
 ERROR=$TRUE
 while [ $ERROR -eq $TRUE ]
 do
   downloadPlatformTools
   ERROR=$FALSE
-  checkPlatformTools
+# checkPlatformTools
   if [ $ERROR -eq $FALSE ];
   then
     extractPlatformTools
@@ -352,6 +347,21 @@ downloadPlatformTools () {
     echo "Downloading Platform Tools..."
     mkdir $PLATFORM_TOOLS_DIR
     cd $PLATFORM_TOOLS_DIR
+    if [ "`uname -s`" == "Darwin" ];	# Mac OS
+    then
+	  PLATFORM_TOOLS_URL=$PLATFORM_TOOLS_MAC_URL
+	  PLATFORM_TOOLS_TGZ=$PLATFORM_TOOLS_MAC_TGZ
+	  PLATFORM_TOOLS_MD5=$PLATFORM_TOOLS_MAC_MD5
+    elif [ "`uname -m`" == "x86_64" ];
+    then
+	  PLATFORM_TOOLS_URL=$PLATFORM_TOOLS_32_URL
+	  PLATFORM_TOOLS_TGZ=$PLATFORM_TOOLS_32_TGZ
+	  PLATFORM_TOOLS_MD5=$PLATFORM_TOOLS_32_MD5
+    else
+	  PLATFORM_TOOLS_URL=$PLATFORM_TOOLS_32_URL
+	  PLATFORM_TOOLS_TGZ=$PLATFORM_TOOLS_32_TGZ
+	  PLATFORM_TOOLS_MD5=$PLATFORM_TOOLS_32_MD5
+    fi
     wget $PLATFORM_TOOLS_URL
   fi
 }
@@ -374,55 +384,6 @@ extractPlatformTools () {
   then
     tar -xzf $PLATFORM_TOOLS_TGZ
     rm $PLATFORM_TOOLS_TGZ
-  fi
-}
-
-# Device data download for selected device
-deviceData () {
-ERROR=$TRUE
-while [ $ERROR -eq $TRUE ]
-do
-  downloadDeviceData
-  ERROR=$FALSE
-  checkDeviceData
-  if [ $ERROR -eq $FALSE ];
-  then
-    extractDeviceData
-  fi
-done
-}
-
-downloadDeviceData () {
-  if [ ! -d $DEVICES_DIR ];
-  then
-    mkdir $DEVICES_DIR
-  fi
-  if [ ! -d $DEVICE_DIR ];
-  then
-    echo "Downloading Device Data..."
-    mkdir $DEVICE_DIR
-    cd $DEVICE_DIR
-    wget $DEVICE_DATA_URL
-  fi
-}
-
-checkDeviceData () {
-  cd $DEVICE_DIR
-  if [ -e $DEVICE_DATA_TGZ ] && [ $DEVICE_DATA_MD5 != "`md5sum $DEVICE_DATA_TGZ | head -c 32`" ];
-  then
-    ERROR=$TRUE
-    echo "ERROR: Device Data is Corrupted. Erasing..."
-    rm -r $DEVICE_DIR
-    echo "Erased. Please try again later."
-  fi
-}
-
-extractDeviceData () {
-  cd $DEVICE_DIR
-  if [ -e $DEVICE_DATA_TGZ ];
-  then
-    tar -xzf $DEVICE_DATA_TGZ
-    rm $DEVICE_DATA_TGZ
   fi
 }
 
@@ -565,7 +526,6 @@ runBootloaderCommands () {
 
 rebootBootloader () {
   adb reboot bootloader
-# sleep 5  There's no need to add wait time because Fastboot always wait for device.
 }
 
 rebootAndroid () {
@@ -596,6 +556,7 @@ recovery () {
     printModeManual
     if [ $KEY == $YES_KEY ];
     then
+	  downloadRecovery
       runRecoveryCommands
       let RECOVERY_COUNTER+=1
       returnMenu
@@ -616,6 +577,20 @@ printRecoveryMenu () {
   echo ""
   echo -n "Please choose a valid option: "
   read KEY
+}
+
+downloadRecovery () {
+  cd $DEVICE_DIR/recovery/$RECOVERY_VERSION
+  if [ ! -e recovery.img ];
+  then
+	echo "Downloading CWM Recovery..."
+	if [ $RECOVERY_VERSION == "standard" ];
+	then
+    wget -O recovery.img $CWM_COMMON_URL-$CWM_VERSION.img
+  else
+	  wget -O recovery.img $CWM_TOUCH_COMMON_URL-$CWM_VERSION.img
+	fi
+  fi
 }
 
 runRecoveryCommands () {
@@ -645,6 +620,7 @@ root () {
   if [ $KEY == $YES_KEY ];
   then
     printRootManual
+    downloadRootZip
     runRootCommands
     let ROOT_COUNTER+=1
     returnMenu
@@ -661,6 +637,14 @@ printRootManual () {
   echo "5. Go to 'install zip from sdcard' >> 'choose zip from sdcard' >> 'UNLT'"
   echo "   and choose 'su.zip'."
   echo "6. Go to 'Go back' >> 'reboot system now'."
+}
+
+downloadRootZip () {
+  cd $DEVICE_DIR/root
+  if [ ! -e su.zip ]
+  then
+    wget -O su.zip $ROOT_ZIP_URL
+  fi
 }
 
 runRootCommands () {
@@ -786,8 +770,8 @@ exitToolkit () {
 
 ERROR=$FALSE
 deviceChooser
+dirMaker
 platformTools
-deviceData
 modeChooser
 EXIT=$FALSE
 while [ $EXIT -eq $FALSE ]
@@ -803,12 +787,7 @@ do
     2) recovery;;
     3) root;;
     4) lockBootloader;;
-    5) if [ $DEVICE == $TOROPLUS_ID ];
-       then
-         returnMenu
-       else
-         factory
-       fi;;
+    5) factory;;
     0) exitToolkit;;
     *) ;;
   esac
