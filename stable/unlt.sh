@@ -98,16 +98,16 @@ PLATFORM_TOOLS_MAC_VERSION="1.0.0"
 
 PLATFORM_TOOLS_DIR="$PWD/platform-tools"
 
-PLATFORM_TOOLS_32_TGZ="$PLATFORM_TOOLS_DIR/PlatformTools32-v$PLATFORM_TOOLS_VERSION.tar.gz"
-PLATFORM_TOOLS_32_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/PlatformTools32-v$PLATFORM_TOOLS_VERSION.tar.gz"
+PLATFORM_TOOLS_32_TGZ="$PLATFORM_TOOLS_DIR/PlatformTools32-v$PLATFORM_TOOLS_32_VERSION.tgz"
+PLATFORM_TOOLS_32_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/PlatformTools32-v$PLATFORM_TOOLS_32_VERSION.tgz"
 PLATFORM_TOOLS_32_MD5="38c53299f3f3f74a2d7351c306987c63"
 
-PLATFORM_TOOLS_64_TGZ="$PLATFORM_TOOLS_DIR/PlatformTools32-v$PLATFORM_TOOLS_VERSION.tar.gz"
-PLATFORM_TOOLS_64_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/PlatformTools32-v$PLATFORM_TOOLS_VERSION.tar.gz"
+PLATFORM_TOOLS_64_TGZ="$PLATFORM_TOOLS_DIR/PlatformTools32-v$PLATFORM_TOOLS_64_VERSION.tgz"
+PLATFORM_TOOLS_64_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/PlatformTools32-v$PLATFORM_TOOLS_64_VERSION.tgz"
 PLATFORM_TOOLS_64_MD5="38c53299f3f3f74a2d7351c306987c63"
 
-PLATFORM_TOOLS_MAC_TGZ="$PLATFORM_TOOLS_DIR/PlatformToolsMac-v$PLATFORM_TOOLS_VERSION.tar.gz"
-PLATFORM_TOOLS_MAC_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/PlatformToolsMac-v$PLATFORM_TOOLS_VERSION.tar.gz"
+PLATFORM_TOOLS_MAC_TGZ="$PLATFORM_TOOLS_DIR/PlatformToolsMac-v$PLATFORM_TOOLS_MAC_VERSION.tgz"
+PLATFORM_TOOLS_MAC_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/PlatformToolsMac-v$PLATFORM_TOOLS_MAC_VERSION.tgz"
 PLATFORM_TOOLS_MAC_MD5="a742246c0f7644800683e97bc9e04921"
 
 # CWM Recovery Download
