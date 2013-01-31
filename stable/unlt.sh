@@ -92,21 +92,23 @@ CRESPO4G_DIR="$PWD/devices/crespo4g"
 
 # Platform Tools Download
 
-PLATFORM_TOOLS_VERSION="200"
+PLATFORM_TOOLS_32_VERSION="1.0.0"
+PLATFORM_TOOLS_64_VERSION="1.0.0"
+PLATFORM_TOOLS_MAC_VERSION="1.0.0"
 
 PLATFORM_TOOLS_DIR="$PWD/platform-tools"
 
-PLATFORM_TOOLS_32_TGZ="$PLATFORM_TOOLS_DIR/platformtools$PLATFORM_TOOLS_VERSION.tar.gz"
-PLATFORM_TOOLS_32_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/platformtools$PLATFORM_TOOLS_VERSION.tar.gz"
-PLATFORM_TOOLS_32_MD5="6f9a2fa61adf8fdf097ca7d8e698c5b0"
+PLATFORM_TOOLS_32_TGZ="$PLATFORM_TOOLS_DIR/PlatformTools32-v$PLATFORM_TOOLS_VERSION.tar.gz"
+PLATFORM_TOOLS_32_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/PlatformTools32-v$PLATFORM_TOOLS_VERSION.tar.gz"
+PLATFORM_TOOLS_32_MD5="38c53299f3f3f74a2d7351c306987c63"
 
-PLATFORM_TOOLS_64_TGZ="$PLATFORM_TOOLS_DIR/platformtools$PLATFORM_TOOLS_VERSION.tar.gz"
-PLATFORM_TOOLS_64_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/platformtools$PLATFORM_TOOLS_VERSION.tar.gz"
-PLATFORM_TOOLS_64_MD5="6f9a2fa61adf8fdf097ca7d8e698c5b0"
+PLATFORM_TOOLS_64_TGZ="$PLATFORM_TOOLS_DIR/PlatformTools32-v$PLATFORM_TOOLS_VERSION.tar.gz"
+PLATFORM_TOOLS_64_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/PlatformTools32-v$PLATFORM_TOOLS_VERSION.tar.gz"
+PLATFORM_TOOLS_64_MD5="38c53299f3f3f74a2d7351c306987c63"
 
-PLATFORM_TOOLS_MAC_TGZ="$PLATFORM_TOOLS_DIR/platformtools$PLATFORM_TOOLS_VERSION.tar.gz"
-PLATFORM_TOOLS_MAC_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/platformtools$PLATFORM_TOOLS_VERSION.tar.gz"
-PLATFORM_TOOLS_MAC_MD5="6f9a2fa61adf8fdf097ca7d8e698c5b0"
+PLATFORM_TOOLS_MAC_TGZ="$PLATFORM_TOOLS_DIR/PlatformToolsMac-v$PLATFORM_TOOLS_VERSION.tar.gz"
+PLATFORM_TOOLS_MAC_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/PlatformToolsMac-v$PLATFORM_TOOLS_VERSION.tar.gz"
+PLATFORM_TOOLS_MAC_MD5="a742246c0f7644800683e97bc9e04921"
 
 # CWM Recovery Download
 
@@ -117,7 +119,7 @@ MAKO_CWM_VERSION="6.0.2.3-mako"
 
 MANTA_CWM_VERSION="6.0.2.3-manta"
 
-GROUPER_CWM_VERISON="6.0.2.3-grouper"
+GROUPER_CWM_VERSION="6.0.2.3-grouper"
 TILAPIA_CWM_VERSION="6.0.2.3-tilapia"
 
 MAGURO_CWM_VERSION="6.0.2.3-maguro"
@@ -333,7 +335,7 @@ while [ $ERROR -eq $TRUE ]
 do
   downloadPlatformTools
   ERROR=$FALSE
-# checkPlatformTools
+  checkPlatformTools
   if [ $ERROR -eq $FALSE ];
   then
     extractPlatformTools
