@@ -463,9 +463,7 @@ printMenu () {
   then
     echo "5. Flash Google Factory Image"
   fi
-  echo ""
   echo "6. Donate"
-  echo ""
   echo "0. Exit"
   echo ""
   echo -n "Please choose a valid option: "
@@ -787,6 +785,25 @@ runLockCommands () {
   fi
 }
 
+# Donate
+
+donate () {
+  printDonateHeader
+  printDonateInfo
+  returnMenu
+}
+
+printDonateHeader () {
+  echo "Donate"
+  echo ""
+}
+
+printDonateInfo () {
+  echo "If you found useful this toolkit, please buy me a coffee."
+  echo "PayPal Donation email: lucasfarre@gmail.com"
+  echo "I will really appreciate your help! :D"
+}
+  
 # Exit Toolkit
 
 exitToolkit () {
@@ -816,6 +833,7 @@ do
     3) root;;
     4) lockBootloader;;
     5) factory;;
+    6) donate;;
     0) exitToolkit;;
     *) ;;
   esac
