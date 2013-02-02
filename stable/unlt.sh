@@ -317,13 +317,34 @@ setDeviceVariables () {
 # Direcories creation for selected device
   
 dirMaker() {
+if [ ! -d $DEVICES_DIR ];
+then
   mkdir $DEVICES_DIR
+fi
+if [ ! -d $DEVICE_DIR ];
+then
   mkdir $DEVICE_DIR
+fi
+if [ ! -d $DEVICE_DIR/recovery ];
+then
   mkdir $DEVICE_DIR/recovery
+fi
+if [ ! -d $DEVICE_DIR/recovery/standard ];
+then
   mkdir $DEVICE_DIR/recovery/standard
+fi
+if [ ! -d $DEVICE_DIR/recovery/touch ];
+then
   mkdir $DEVICE_DIR/recovery/touch
-  mkdir $DEVICE_DIR/root/
+fi
+if [ ! -d $DEVICE_DIR/root ];
+then
+  mkdir $DEVICE_DIR/root
+fi
+if [ ! -d $DEVICE_DIR/factory ];
+then
   mkdir $DEVICE_DIR/factory
+fi
 }
 
 
@@ -335,7 +356,7 @@ while [ $ERROR -eq $TRUE ]
 do
   downloadPlatformTools
   ERROR=$FALSE
-  checkPlatformTools
+# checkPlatformTools
   if [ $ERROR -eq $FALSE ];
   then
     extractPlatformTools
@@ -442,6 +463,9 @@ printMenu () {
   then
     echo "5. Flash Google Factory Image"
   fi
+  echo ""
+  echo "6. Donate"
+  echo ""
   echo "0. Exit"
   echo ""
   echo -n "Please choose a valid option: "
