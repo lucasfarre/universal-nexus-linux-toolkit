@@ -15,7 +15,7 @@
 #   limitations under the License.
 
 
-# Universal Nexus Linux Toolkit v2.1.0
+# Universal Nexus Linux Toolkit
 # by lucasfarre (tatelucas)
 # Apache License 2.0
 # Source: http://code.google.com/p/galaxy-nexus-linux-toolkit/
@@ -29,7 +29,7 @@ PATH="$PATH:$PWD/platform-tools"
 
 # /*** Constants ***/
 
-VERSION="210"
+VERSION="211"
 TRUE=1
 FALSE=0
 INVALID_DEVICE=0
@@ -133,13 +133,13 @@ CRESPO4G_CWM_VERSION="6.0.2.5-crespo4g"
 
 # Root Zip Download
 
-SUPERSU_VERSION="0.99"
-ROOT_ZIP_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/CWM-SuperSU-v$SUPERSU_VERSION.zip"
+SUPERSU_VERSION="1.04"
+ROOT_ZIP_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/UPDATE-SuperSU-v$SUPERSU_VERSION.zip"
 
 # Factory URL & MD5
 
-FACTORY_MAKO="https://dl.google.com/dl/android/aosp/occam-jop40c-factory-cd3dc140.tgz"
-MD5_MAKO="d8cef2e9aebb142d764ee70098eae237"
+FACTORY_MAKO="https://dl.google.com/dl/android/aosp/occam-jop40d-factory-ca7602f0.tgz"
+MD5_MAKO="9f39365c4eb0aba843fefabd5423802d"
 
 FACTORY_MANTA="https://dl.google.com/dl/android/aosp/mantaray-jop40c-factory-0d641789.tgz"
 MD5_MANTA="fa25d6871890dc27fb0f881200d7d79d"
@@ -190,7 +190,7 @@ TOUCH_CWM_ID="T"
 printHeader () {
   clear
   echo "********************************************************************************"
-  echo "*               Universal Nexus Linux Toolkit v2.1.0 by tatelucas              *"
+  echo "*               Universal Nexus Linux Toolkit v2.1.1 by tatelucas              *"
   echo "********************************************************************************"
 }
 
