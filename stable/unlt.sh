@@ -29,7 +29,7 @@ PATH="$PATH:$PWD/platform-tools"
 
 # /*** Constants ***/
 
-VERSION="211"
+VERSION="212"
 TRUE=1
 FALSE=0
 INVALID_DEVICE=0
@@ -138,19 +138,19 @@ ROOT_ZIP_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/UPDATE-Supe
 
 # Factory URL & MD5
 
-FACTORY_MAKO="https://dl.google.com/dl/android/aosp/occam-jop40d-factory-ca7602f0.tgz"
-MD5_MAKO="9f39365c4eb0aba843fefabd5423802d"
+FACTORY_MAKO="https://dl.google.com/dl/android/aosp/occam-jdq39-factory-345dc199.tgz"
+MD5_MAKO="6280b61201f961c6541905eb6bcb7316"
 
-FACTORY_MANTA="https://dl.google.com/dl/android/aosp/mantaray-jop40c-factory-0d641789.tgz"
-MD5_MANTA="fa25d6871890dc27fb0f881200d7d79d"
+FACTORY_MANTA="https://dl.google.com/dl/android/aosp/mantaray-jdq39-factory-d79f489e.tgz"
+MD5_MANTA="b7a1162fb4e617143306ef6c4ca6c040"
 
-FACTORY_GROUPER="https://dl.google.com/dl/android/aosp/nakasi-jop40d-factory-6ac58a1a.tgz"
-MD5_GROUPER="27a9a10cfc75b100ba63afa35c08f3db"
-FACTORY_TILAPIA="https://dl.google.com/dl/android/aosp/nakasig-jop40d-factory-efcec044.tgz"
-MD5_TILAPIA="e5d22e0791ab2f5d470bba77fbd6771d"
+FACTORY_GROUPER="https://dl.google.com/dl/android/aosp/nakasi-jdq39-factory-c317339e.tgz"
+MD5_GROUPER="b869c77ba7e2929b3ca00804bf64b945"
+FACTORY_TILAPIA="https://dl.google.com/dl/android/aosp/nakasig-jdq39-factory-0798439d.tgz"
+MD5_TILAPIA="ee8db1ed6ff1c007fe12136d4bc65cd8"
 
-FACTORY_MAGURO="https://dl.google.com/dl/android/aosp/takju-jop40d-factory-e4d13f14.tgz"
-MD5_MAGURO="351926836d314848ed4292bbc499ff36"
+FACTORY_MAGURO="https://dl.google.com/dl/android/aosp/takju-jdq39-factory-5e273f02.tgz"
+MD5_MAGURO="2fae8a6f50016e83f232fbb2d099fd42"
 FACTORY_TORO="https://dl.google.com/dl/android/aosp/mysid-jro03o-factory-f17426e6.tgz"
 MD5_TORO="1df6a2a7385c4745193fe82bf2a87f78"
 FACTORY_TOROPLUS="https://dl.google.com/dl/android/aosp/mysidspr-fh05-factory-8cb5208b.tgz"
@@ -190,7 +190,7 @@ TOUCH_CWM_ID="T"
 printHeader () {
   clear
   echo "********************************************************************************"
-  echo "*               Universal Nexus Linux Toolkit v2.1.1 by tatelucas              *"
+  echo "*               Universal Nexus Linux Toolkit v2.1.2 by tatelucas              *"
   echo "********************************************************************************"
 }
 
