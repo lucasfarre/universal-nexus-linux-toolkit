@@ -115,46 +115,46 @@ PLATFORM_TOOLS_MAC_MD5="a742246c0f7644800683e97bc9e04921"
 CWM_COMMON_URL="http://download2.clockworkmod.com/recoveries/recovery-clockwork"
 CWM_TOUCH_COMMON_URL="http://download2.clockworkmod.com/recoveries/recovery-clockwork-touch"
 
-MAKO_CWM_VERSION="6.0.2.3-mako"
+MAKO_CWM_VERSION="6.0.3.4-mako"
 
-MANTA_CWM_VERSION="6.0.2.3-manta"
+MANTA_CWM_VERSION="6.0.3.1-manta"
 
-GROUPER_CWM_VERSION="6.0.2.3-grouper"
-TILAPIA_CWM_VERSION="6.0.2.3-tilapia"
+GROUPER_CWM_VERSION="6.0.3.4-grouper"
+TILAPIA_CWM_VERSION="6.0.3.1-tilapia"
 
-MAGURO_CWM_VERSION="6.0.2.3-maguro"
-TORO_CWM_VERSION="6.0.2.3-toro"
-TOROPLUS_CWM_VERSION="6.0.2.3-toroplus"
+MAGURO_CWM_VERSION="6.0.3.4-maguro"
+TORO_CWM_VERSION="6.0.3.3-toro"
+TOROPLUS_CWM_VERSION="6.0.3.3-toroplus"
 
-CRESPO_CWM_VERSION="6.0.2.5-crespo"
-CRESPOA_CWM_VERSION="6.0.2.5-crespo"
-CRESPOK_CWM_VERSION="6.0.2.5-crespo"
-CRESPO4G_CWM_VERSION="6.0.2.5-crespo4g"
+CRESPO_CWM_VERSION="6.0.3.4-crespo"
+CRESPOA_CWM_VERSION="6.0.3.4-crespo"
+CRESPOK_CWM_VERSION="6.0.3.4-crespo"
+CRESPO4G_CWM_VERSION="6.0.3.3-crespo4g"
 
 # Root Zip Download
 
-SUPERSU_VERSION="1.04"
+SUPERSU_VERSION="1.43"
 ROOT_ZIP_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/UPDATE-SuperSU-v$SUPERSU_VERSION.zip"
 
 # Factory URL & MD5
 
-FACTORY_MAKO="https://dl.google.com/dl/android/aosp/occam-jdq39-factory-345dc199.tgz"
-MD5_MAKO="6280b61201f961c6541905eb6bcb7316"
+FACTORY_MAKO="https://dl.google.com/dl/android/aosp/occam-jwr66v-factory-08d2b697.tgz"
+MD5_MAKO="9d33973a61fa9266244fc43397888703"
 
-FACTORY_MANTA="https://dl.google.com/dl/android/aosp/mantaray-jdq39-factory-d79f489e.tgz"
-MD5_MANTA="b7a1162fb4e617143306ef6c4ca6c040"
+FACTORY_MANTA="https://dl.google.com/dl/android/aosp/mantaray-jwr66v-factory-888d124e.tgz"
+MD5_MANTA="f80f2251356388b7151ac817cfada671"
 
-FACTORY_GROUPER="https://dl.google.com/dl/android/aosp/nakasi-jdq39-factory-c317339e.tgz"
-MD5_GROUPER="b869c77ba7e2929b3ca00804bf64b945"
-FACTORY_TILAPIA="https://dl.google.com/dl/android/aosp/nakasig-jdq39-factory-0798439d.tgz"
-MD5_TILAPIA="ee8db1ed6ff1c007fe12136d4bc65cd8"
+FACTORY_GROUPER="https://dl.google.com/dl/android/aosp/nakasi-jwr66v-factory-d341d356.tgz"
+MD5_GROUPER="77e304584c4f192761234a9e1eb2fbe3"
+FACTORY_TILAPIA="https://dl.google.com/dl/android/aosp/nakasig-jwr66v-factory-aebc7b11.tgz"
+MD5_TILAPIA="0f426a1981338b637aa12ff7bbd197be"
 
-FACTORY_MAGURO="https://dl.google.com/dl/android/aosp/takju-jdq39-factory-5e273f02.tgz"
-MD5_MAGURO="2fae8a6f50016e83f232fbb2d099fd42"
-FACTORY_TORO="https://dl.google.com/dl/android/aosp/mysid-jro03o-factory-f17426e6.tgz"
-MD5_TORO="1df6a2a7385c4745193fe82bf2a87f78"
-FACTORY_TOROPLUS="https://dl.google.com/dl/android/aosp/mysidspr-fh05-factory-8cb5208b.tgz"
-MD5_TOROPLUS="7b3c4c37dd64a664427d3829e2491bee"
+FACTORY_MAGURO="https://dl.google.com/dl/android/aosp/takju-jwr66v-factory-c2ef855e.tgz"
+MD5_MAGURO="6fcb316e2ce5226e1d0397b74c50db50"
+FACTORY_TORO="https://dl.google.com/dl/android/aosp/mysid-jdq39-factory-e365033f.tgz"
+MD5_TORO="4e3e2a4072e45c8e9c4bae8ce5c5c189"
+FACTORY_TOROPLUS="https://dl.google.com/dl/android/aosp/mysidspr-ga02-factory.tgz"
+MD5_TOROPLUS="c93156606b39a6b61d371ef935a6a6ba"
 
 FACTORY_CRESPO="https://dl.google.com/dl/android/aosp/soju-jzo54k-factory-36602333.tgz"
 MD5_CRESPO="788233dca5954532acda63039f814b4d"
