@@ -29,7 +29,7 @@ PATH="$PATH:$PWD/platform-tools"
 
 # /*** Constants ***/
 
-VERSION="212"
+VERSION="220"
 TRUE=1
 FALSE=0
 INVALID_DEVICE=0
@@ -92,7 +92,7 @@ CRESPO4G_DIR="$PWD/devices/crespo4g"
 
 # Platform Tools Download
 
-PLATFORM_TOOLS_32_VERSION="1.0.0"
+PLATFORM_TOOLS_32_VERSION="18.0.1"
 PLATFORM_TOOLS_64_VERSION="1.0.0"
 PLATFORM_TOOLS_MAC_VERSION="1.0.0"
 
@@ -190,7 +190,7 @@ TOUCH_CWM_ID="T"
 printHeader () {
   clear
   echo "********************************************************************************"
-  echo "*               Universal Nexus Linux Toolkit v2.1.2 by tatelucas              *"
+  echo "*               Universal Nexus Linux Toolkit v2.2.0 by tatelucas              *"
   echo "********************************************************************************"
 }
 
