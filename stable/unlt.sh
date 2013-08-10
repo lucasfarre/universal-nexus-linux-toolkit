@@ -29,7 +29,7 @@ PATH="$PATH:$PWD/platform-tools"
 
 # /*** Constants ***/
 
-VERSION="221"
+VERSION="230"
 TRUE=1
 FALSE=0
 INVALID_DEVICE=0
@@ -190,7 +190,7 @@ TOUCH_CWM_ID="T"
 printHeader () {
   clear
   echo "********************************************************************************"
-  echo "*               Universal Nexus Linux Toolkit v2.2.1 by tatelucas              *"
+  echo "*               Universal Nexus Linux Toolkit v2.3.0 by tatelucas              *"
   echo "********************************************************************************"
 }
 
@@ -582,8 +582,9 @@ recovery () {
     printModeManual
     if [ $KEY == $YES_KEY ];
     then
-	  downloadRecovery
+	    downloadRecovery
       runRecoveryCommands
+      printRecoveryManual
       let RECOVERY_COUNTER+=1
       returnMenu
     fi
@@ -625,10 +626,13 @@ runRecoveryCommands () {
   rebootBootloader
   fi
   fastboot flash recovery $DEVICE_DIR/recovery/$RECOVERY_VERSION/recovery.img
-  if [ $MODE == $AUTO_MODE_ID ];
-  then
-    rebootAndroid
-  fi
+}
+
+printRecoveryManual () {
+  echo ""
+  echo "a. Select 'Recovery mode' with Volume up and down and then press Power."
+  echo "b. Choose 'reboot system now' and select 'Yes - Disable recovery flash'"
+  echo "c. Select 'Yes - Root device'"
 }
 
 # Root the device
