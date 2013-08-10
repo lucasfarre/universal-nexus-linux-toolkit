@@ -29,7 +29,7 @@ PATH="$PATH:$PWD/platform-tools"
 
 # /*** Constants ***/
 
-VERSION="220"
+VERSION="221"
 TRUE=1
 FALSE=0
 INVALID_DEVICE=0
@@ -115,16 +115,16 @@ PLATFORM_TOOLS_MAC_MD5="a742246c0f7644800683e97bc9e04921"
 CWM_COMMON_URL="http://download2.clockworkmod.com/recoveries/recovery-clockwork"
 CWM_TOUCH_COMMON_URL="http://download2.clockworkmod.com/recoveries/recovery-clockwork-touch"
 
-MAKO_CWM_VERSION="6.0.3.4-mako"
+MAKO_CWM_VERSION="6.0.3.5-mako"
 
-MANTA_CWM_VERSION="6.0.3.1-manta"
+MANTA_CWM_VERSION="6.0.3.5-manta"
 
-GROUPER_CWM_VERSION="6.0.3.4-grouper"
-TILAPIA_CWM_VERSION="6.0.3.1-tilapia"
+GROUPER_CWM_VERSION="6.0.3.5-grouper"
+TILAPIA_CWM_VERSION="6.0.3.5-tilapia"
 
-MAGURO_CWM_VERSION="6.0.3.4-maguro"
-TORO_CWM_VERSION="6.0.3.3-toro"
-TOROPLUS_CWM_VERSION="6.0.3.3-toroplus"
+MAGURO_CWM_VERSION="6.0.3.5-maguro"
+TORO_CWM_VERSION="6.0.3.5-toro"
+TOROPLUS_CWM_VERSION="6.0.3.5-toroplus"
 
 CRESPO_CWM_VERSION="6.0.3.4-crespo"
 CRESPOA_CWM_VERSION="6.0.3.4-crespo"
@@ -190,7 +190,7 @@ TOUCH_CWM_ID="T"
 printHeader () {
   clear
   echo "********************************************************************************"
-  echo "*               Universal Nexus Linux Toolkit v2.2.0 by tatelucas              *"
+  echo "*               Universal Nexus Linux Toolkit v2.2.1 by tatelucas              *"
   echo "********************************************************************************"
 }
 
