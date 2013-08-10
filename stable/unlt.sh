@@ -133,7 +133,7 @@ CRESPO4G_CWM_VERSION="6.0.3.3-crespo4g"
 
 # Root Zip Download
 
-SUPERSU_VERSION="1.43"
+SUPERSU_VERSION="1.51"
 ROOT_ZIP_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/UPDATE-SuperSU-v$SUPERSU_VERSION.zip"
 
 # Factory URL & MD5
