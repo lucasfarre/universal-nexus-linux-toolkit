@@ -29,7 +29,7 @@ PATH="$PATH:$PWD/platform-tools"
 
 # /*** Constants ***/
 
-VERSION="230"
+VERSION="231"
 TRUE=1
 FALSE=0
 INVALID_DEVICE=0
@@ -209,7 +209,7 @@ TOUCH_CWM_ID="T"
 printHeader () {
 clear
 echo "********************************************************************************"
-echo "*               Universal Nexus Linux Toolkit v2.3.0 by tatelucas              *"
+echo "*               Universal Nexus Linux Toolkit v2.3.1 by tatelucas              *"
 echo "********************************************************************************"
 }
 
