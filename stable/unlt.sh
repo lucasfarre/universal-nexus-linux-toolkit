@@ -495,7 +495,7 @@ echo "1. Unlock the Bootloader"
 echo "2. Flash ClockworkMod Recovery"
 echo "3. Root the Device"
 echo "4. Lock the Bootloader"
-if [ $DEVICE != $TOROPLUS_ID && $DEVICE != $DEB_ID ];
+if [ $DEVICE != $TOROPLUS_ID ] && [ $DEVICE != $DEB_ID ];
 then
 echo "5. Flash Google Factory Image"
 fi
