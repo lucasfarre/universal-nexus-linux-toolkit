@@ -29,7 +29,7 @@ PATH="$PATH:$PWD/platform-tools"
 
 # /*** Constants ***/
 
-VERSION="240"
+VERSION="241"
 TRUE=1
 FALSE=0
 INVALID_DEVICE=0
@@ -176,7 +176,7 @@ FACTORY_HAMMERHEAD="https://dl.google.com/dl/android/aosp/hammerhead-krt16m-fact
 MD5_HAMMERHEAD="36aa82ab2d7d05ee144d18546565cd5f"
 
 FACTORY_FLO="https://dl.google.com/dl/android/aosp/razor-krt16o-factory-d9e7d441.tgz"
-MD5_FLO="9a083ace40baa8a3f59485b9e0ecd7d2"
+MD5_FLO="1bb4ce870b4c79483a0e83735679bea5"
 FACTORY_DEB="https://dl.google.com/dl/android/aosp/razorg-krt16o-factory-2b749c29.tgz"
 MD5_DEB="231f858d27297208344b4c2df72833fb"
 
@@ -242,7 +242,7 @@ fi
 printHeader () {
 clear
 echo "********************************************************************************"
-echo "*               Universal Nexus Linux Toolkit v2.4.0 by tatelucas              *"
+echo "*               Universal Nexus Linux Toolkit v2.4.1 by tatelucas              *"
 echo "********************************************************************************"
 }
 
