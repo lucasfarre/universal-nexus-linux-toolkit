@@ -29,7 +29,7 @@ PATH="$PATH:$PWD/platform-tools"
 
 # /*** Constants ***/
 
-VERSION="231"
+VERSION="240"
 TRUE=1
 FALSE=0
 INVALID_DEVICE=0
@@ -42,43 +42,48 @@ NO_KEY="N"
 
 # Devices
 
+HAMMERHEAD_NAME="Nexus 5 [hammerhead]"
+HAMMERHEAD_ID=1
+
 DEB_NAME="Nexus 7 2013 (LTE) [deb]"
-DEB_ID=3
+DEB_ID=4
 
 FLO_NAME="Nexus 7 2013 (WiFI) [flo]"
-FLO_ID=2
+FLO_ID=3
 
 MAKO_NAME="Nexus 4 [mako]"
-MAKO_ID=1
+MAKO_ID=2
 
 MANTA_NAME="Nexus 10 [manta]"
-MANTA_ID=6
+MANTA_ID=7
 
 GROUPER_NAME="Nexus 7 (WiFi) [grouper]"
-GROUPER_ID=4
+GROUPER_ID=5
 
 TILAPIA_NAME="Nexus 7 (GSM) [tilapia]"
-TILAPIA_ID=5
+TILAPIA_ID=6
 
 MAGURO_NAME="Galaxy Nexus (GSM) [maguro]"
-MAGURO_ID=7
+MAGURO_ID=8
 TORO_NAME="Galaxy Nexus (Verizon) [toro]"
-TORO_ID=8
+TORO_ID=9
 TOROPLUS_NAME="Galaxy Nexus (Sprint) [toroplus]"
-TOROPLUS_ID=9
+TOROPLUS_ID=10
 
 CRESPO_NAME="Nexus S (worldwide version, i9020t and i9023) [crespo]"
-CRESPO_ID=10
+CRESPO_ID=11
 CRESPOA_NAME="Nexus S (850MHz version, i9020a) [crespo]"
-CRESPOA_ID=11
+CRESPOA_ID=12
 CRESPOK_NAME="Nexus S (Korea version, m200) [crespo]"
-CRESPOK_ID=12
+CRESPOK_ID=13
 CRESPO4G_NAME="Nexus S 4G (d720) [crespo4g]"
-CRESPO4G_ID=13
+CRESPO4G_ID=14
 
 # Dir Names
 
 DEVICES_DIR="$PWD/devices"
+
+HAMMERHEAD_DIR="$PWD/devices/hammerhead"
 
 DEB_DIR="$PWD/devices/deb"
 
@@ -102,9 +107,9 @@ CRESPO4G_DIR="$PWD/devices/crespo4g"
 
 # Platform Tools Download
 
-PLATFORM_TOOLS_32_VERSION="18.0.1"
+PLATFORM_TOOLS_32_VERSION="19"
 PLATFORM_TOOLS_64_VERSION="1.0.0"
-PLATFORM_TOOLS_MAC_VERSION="18.0.1"
+PLATFORM_TOOLS_MAC_VERSION="19"
 
 PLATFORM_TOOLS_DIR="$PWD/platform-tools"
 
@@ -125,51 +130,69 @@ PLATFORM_TOOLS_MAC_MD5="a742246c0f7644800683e97bc9e04921"
 CWM_COMMON_URL="http://download2.clockworkmod.com/recoveries/recovery-clockwork"
 CWM_TOUCH_COMMON_URL="http://download2.clockworkmod.com/recoveries/recovery-clockwork-touch"
 
-DEB_CWM_VERSION=0
-DEB_TWRP_URL="http://techerrata.com/file/twrp2/deb/openrecovery-twrp-2.6.0.0-deb.img"
+DEB_CWM_VERSION="6.0.4.4-deb"
+DEB_TWRP_URL="http://techerrata.com/file/twrp2/deb/openrecovery-twrp-2.6.3.1-deb.img"
 
-FLO_CWM_VERSION=0
-FLO_TWRP_URL="http://techerrata.com/file/twrp2/flo/openrecovery-twrp-2.6.0.0-flo.img"
+FLO_CWM_VERSION="6.0.4.3-flo"
+FLO_TWRP_URL="http://techerrata.com/file/twrp2/flo/openrecovery-twrp-2.6.3.1-flo.img"
 
-MAKO_CWM_VERSION="6.0.3.5-mako"
+HAMMERHEAD_CWM_VERSION=0
+HAMMERHEAD_TWRP_URL="http://techerrata.com/file/twrp2/hammerhead/openrecovery-twrp-2.6.3.2-hammerhead.img"
 
-MANTA_CWM_VERSION="6.0.3.5-manta"
+MAKO_CWM_VERSION="6.0.4.3-mako"
+MAKO_TWRP_URL="http://techerrata.com/file/twrp2/mako/openrecovery-twrp-2.6.3.3-mako.img"
 
-GROUPER_CWM_VERSION="6.0.3.5-grouper"
-TILAPIA_CWM_VERSION="6.0.3.5-tilapia"
+MANTA_CWM_VERSION="6.0.4.3-manta"
+MANTA_TWRP_URL="http://techerrata.com/file/twrp2/manta/openrecovery-twrp-2.6.3.1-manta.img"
 
-MAGURO_CWM_VERSION="6.0.3.5-maguro"
-TORO_CWM_VERSION="6.0.3.5-toro"
-TOROPLUS_CWM_VERSION="6.0.3.5-toroplus"
+GROUPER_CWM_VERSION="6.0.4.3-grouper"
+GROUPER_TWRP_URL="http://techerrata.com/file/twrp2/grouper/openrecovery-twrp-2.6.3.1-grouper.img"
+TILAPIA_CWM_VERSION="6.0.4.3-tilapia"
+TILAPIA_TWRP_URL="http://techerrata.com/file/twrp2/tilapia/openrecovery-twrp-2.6.3.1-tilapia.img"
 
-CRESPO_CWM_VERSION="6.0.3.4-crespo"
-CRESPOA_CWM_VERSION="6.0.3.4-crespo"
-CRESPOK_CWM_VERSION="6.0.3.4-crespo"
-CRESPO4G_CWM_VERSION="6.0.3.3-crespo4g"
+MAGURO_CWM_VERSION="6.0.4.3-maguro"
+MAGURO_TWRP_URL="http://techerrata.com/file/twrp2/maguro/openrecovery-twrp-2.6.3.1-maguro.img"
+TORO_CWM_VERSION="6.0.4.3-toro"
+TORO_TWRP_URL="http://techerrata.com/file/twrp2/toro/openrecovery-twrp-2.6.3.1-toro.img"
+TOROPLUS_CWM_VERSION="6.0.4.3-toroplus"
+TOROPLUS_TWRP_URL="http://techerrata.com/file/twrp2/toroplus/openrecovery-twrp-2.6.3.1-toroplus.img"
+
+CRESPO_CWM_VERSION="6.0.4.3-crespo"
+CRESPOA_CWM_VERSION="6.0.4.3-crespo"
+CRESPOK_CWM_VERSION="6.0.4.3-crespo"
+CRESPO_TWRP_URL="http://techerrata.com/file/twrp2/crespo/openrecovery-twrp-2.6.3.0-crespo.img"
+CRESPO4G_CWM_VERSION="6.0.4.3-crespo4g"
+CRESPO4G_TWRP_URL="http://techerrata.com/file/twrp2/crespo4g/openrecovery-twrp-2.6.3.0-crespo4g.img"
+
 
 # Root Zip Download
 
-SUPERSU_VERSION="1.51"
+SUPERSU_VERSION="1.69"
 ROOT_ZIP_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/UPDATE-SuperSU-v$SUPERSU_VERSION.zip"
 
 # Factory URL & MD5
 
-FACTORY_FLO="https://dl.google.com/dl/android/aosp/razor-jss15q-factory-4f77b811.tgz"
-MD5_FLO="c2a6413aee5a9737f1bcc3c3fe445e18"
+FACTORY_HAMMERHEAD="https://dl.google.com/dl/android/aosp/hammerhead-krt16m-factory-bd9c39de.tgz"
+MD5_HAMMERHEAD="36aa82ab2d7d05ee144d18546565cd5f"
 
-FACTORY_MAKO="https://dl.google.com/dl/android/aosp/occam-jwr66v-factory-08d2b697.tgz"
-MD5_MAKO="9d33973a61fa9266244fc43397888703"
+FACTORY_FLO="https://dl.google.com/dl/android/aosp/razor-krt16o-factory-d9e7d441.tgz"
+MD5_FLO="9a083ace40baa8a3f59485b9e0ecd7d2"
+FACTORY_DEB="https://dl.google.com/dl/android/aosp/razorg-krt16o-factory-2b749c29.tgz"
+MD5_DEB="231f858d27297208344b4c2df72833fb"
 
-FACTORY_MANTA="https://dl.google.com/dl/android/aosp/mantaray-jwr66v-factory-888d124e.tgz"
-MD5_MANTA="f80f2251356388b7151ac817cfada671"
+FACTORY_MAKO="https://dl.google.com/dl/android/aosp/occam-krt16o-factory-75ccae7a.tgz"
+MD5_MAKO="7180251114d877d162a886d13fff1cf8"
 
-FACTORY_GROUPER="https://dl.google.com/dl/android/aosp/nakasi-jwr66v-factory-d341d356.tgz"
-MD5_GROUPER="77e304584c4f192761234a9e1eb2fbe3"
-FACTORY_TILAPIA="https://dl.google.com/dl/android/aosp/nakasig-jwr66v-factory-aebc7b11.tgz"
-MD5_TILAPIA="0f426a1981338b637aa12ff7bbd197be"
+FACTORY_MANTA="https://dl.google.com/dl/android/aosp/mantaray-krt16o-factory-85349288.tgz"
+MD5_MANTA="7379d137f23e920111c437dd725504e4"
 
-FACTORY_MAGURO="https://dl.google.com/dl/android/aosp/takju-jwr66v-factory-c2ef855e.tgz"
-MD5_MAGURO="6fcb316e2ce5226e1d0397b74c50db50"
+FACTORY_GROUPER="https://dl.google.com/dl/android/aosp/nakasi-krt16o-factory-db4a1a8a.tgz"
+MD5_GROUPER="2d657e7c6e3bf690ef9aee07111d19dd"
+FACTORY_TILAPIA="https://dl.google.com/dl/android/aosp/nakasig-krt16o-factory-9c987833.tgz"
+MD5_TILAPIA="26dbd4e3e93c4521cfb1000b18c4771d"
+
+FACTORY_MAGURO="https://dl.google.com/dl/android/aosp/yakju-jwr66y-factory-09207065.tgz"
+MD5_MAGURO="e463e3e0fb251044d9bd0885ae7ac6ce"
 FACTORY_TORO="https://dl.google.com/dl/android/aosp/mysid-jdq39-factory-e365033f.tgz"
 MD5_TORO="4e3e2a4072e45c8e9c4bae8ce5c5c189"
 FACTORY_TOROPLUS="https://dl.google.com/dl/android/aosp/mysidspr-ga02-factory.tgz"
@@ -191,6 +214,7 @@ KEY_COMBINATIONS_GALAXY_NEXUS="Press and hold both Volume Up and Volume Down, th
 KEY_COMBINATIONS_NEXUS_7="Press and hold Volume Down, then press and hold Power."
 KEY_COMBINATIONS_NEXUS_10="Press and hold both Volume Up and Volume Down, then press and hold Power."
 KEY_COMBINATIONS_NEXUS_4="Press and hold Volume Down, then press and hold Power."
+KEY_COMBINATIONS_NEXUS_5="Press and hold both Volume Up and Volume Down, then press and hold Power"
 
 # Others
 
@@ -202,14 +226,23 @@ MANUAL_MODE_NAME="Manual [FASTBOOT]"
 
 STANDARD_CWM_ID="S"
 TOUCH_CWM_ID="T"
+TWRP_ID="W"
 
+# MD5 Checksum Command
+
+if [ "`uname -s`" == "Darwin" ];	# Mac OS
+then
+    MD5_COMMAND = "md5 -q"
+else
+	MD5_COMMAND = "md5sum"
+fi
 
 # /*** Functions ***/
 
 printHeader () {
 clear
 echo "********************************************************************************"
-echo "*               Universal Nexus Linux Toolkit v2.3.1 by tatelucas              *"
+echo "*               Universal Nexus Linux Toolkit v2.4.0 by tatelucas              *"
 echo "********************************************************************************"
 }
 
@@ -228,6 +261,7 @@ done
 printDeviceChooser () {
 echo "Nexus Devices"
 echo ""
+echo "$HAMMERHEAD_ID. $HAMMERHEAD_NAME"
 echo "$MAKO_ID. $MAKO_NAME"
 echo "$FLO_ID. $FLO_NAME"
 echo "$DEB_ID. $DEB_NAME"
@@ -255,6 +289,7 @@ case $DEVICE in
 $CRESPO_ID) DEVICE_NAME=$CRESPO_NAME
 DEVICE_DIR=$CRESPO_DIR
 CWM_VERSION=$CRESPO_CWM_VERSION
+TWRP_URL=$CRESPO_TWRP_URL
 FACTORY_URL=$FACTORY_CRESPO
 MD5=$MD5_CRESPO
 KEY_COMBINATIONS=$KEY_COMBINATIONS_NEXUS_S;;
@@ -262,6 +297,7 @@ KEY_COMBINATIONS=$KEY_COMBINATIONS_NEXUS_S;;
 $CRESPOA_ID) DEVICE_NAME=$CRESPOA_NAME
 DEVICE_DIR=$CRESPOA_DIR
 CWM_VERSION=$CRESPOA_CWM_VERSION
+TWRP_URL=$CRESPO_TWRP_URL
 FACTORY_URL=$FACTORY_CRESPOA
 MD5=$MD5_CRESPOA
 KEY_COMBINATIONS=$KEY_COMBINATIONS_NEXUS_S;;
@@ -269,6 +305,7 @@ KEY_COMBINATIONS=$KEY_COMBINATIONS_NEXUS_S;;
 $CRESPOK_ID) DEVICE_NAME=$CRESPOK_NAME
 DEVICE_DIR=$CRESPOK_DIR
 CWM_VERSION=$CRESPOK_CWM_VERSION
+TWRP_URL=$CRESPO_TWRP_URL
 FACTORY_URL=$FACTORY_CRESPOK
 MD5=$MD5_CRESPOK
 KEY_COMBINATIONS=$KEY_COMBINATIONS_NEXUS_S;;
@@ -276,6 +313,7 @@ KEY_COMBINATIONS=$KEY_COMBINATIONS_NEXUS_S;;
 $CRESPO4G_ID) DEVICE_NAME=$CRESPO4G_NAME
 DEVICE_DIR=$CRESPO4G_DIR
 CWM_VERSION=$CRESPO4G_CWM_VERSION
+TWRP_URL=$CRESPO4G_TWRP_URL
 FACTORY_URL=$FACTORY_CRESPO4G
 MD5=$MD5_CRESPO4G
 KEY_COMBINATIONS=$KEY_COMBINATIONS_NEXUS_S;;
@@ -283,6 +321,7 @@ KEY_COMBINATIONS=$KEY_COMBINATIONS_NEXUS_S;;
 $MAGURO_ID) DEVICE_NAME=$MAGURO_NAME
 DEVICE_DIR=$MAGURO_DIR
 CWM_VERSION=$MAGURO_CWM_VERSION
+TWRP_URL=$MAGURO_TWRP_URL
 FACTORY_URL=$FACTORY_MAGURO
 MD5=$MD5_MAGURO
 KEY_COMBINATIONS=$KEY_COMBINATIONS_GALAXY_NEXUS;;
@@ -290,6 +329,7 @@ KEY_COMBINATIONS=$KEY_COMBINATIONS_GALAXY_NEXUS;;
 $TORO_ID) DEVICE_NAME=$TORO_NAME
 DEVICE_DIR=$TORO_DIR
 CWM_VERSION=$TORO_CWM_VERSION
+TWRP_URL=$TORO_TWRP_URL
 FACTORY_URL=$FACTORY_TORO
 MD5=$MD5_TORO
 KEY_COMBINATIONS=$KEY_COMBINATIONS_GALAXY_NEXUS;;
@@ -297,6 +337,7 @@ KEY_COMBINATIONS=$KEY_COMBINATIONS_GALAXY_NEXUS;;
 $TOROPLUS_ID) DEVICE_NAME=$TOROPLUS_NAME
 DEVICE_DIR=$TOROPLUS_DIR
 CWM_VERSION=$TOROPLUS_CWM_VERSION
+TWRP_URL=$TOROPLUS_TWRP_URL
 FACTORY_URL=$FACTORY_TOROPLUS
 MD5=$MD5_TOROPLUS
 KEY_COMBINATIONS=$KEY_COMBINATIONS_GALAXY_NEXUS;;
@@ -304,6 +345,7 @@ KEY_COMBINATIONS=$KEY_COMBINATIONS_GALAXY_NEXUS;;
 $GROUPER_ID)  DEVICE_NAME=$GROUPER_NAME
 DEVICE_DIR=$GROUPER_DIR
 CWM_VERSION=$GROUPER_CWM_VERSION
+TWRP_URL=$GROUPER_TWRP_URL
 FACTORY_URL=$FACTORY_GROUPER
 MD5=$MD5_GROUPER
 KEY_COMBINATIONS=$KEY_COMBINATIONS_NEXUS_7;;
@@ -311,6 +353,7 @@ KEY_COMBINATIONS=$KEY_COMBINATIONS_NEXUS_7;;
 $TILAPIA_ID)  DEVICE_NAME=$TILAPIA_NAME
 DEVICE_DIR=$TILAPIA_DIR
 CWM_VERSION=$TILAPIA_CWM_VERSION
+TWRP_URL=$TILAPIA_TWRP_URL
 FACTORY_URL=$FACTORY_TILAPIA
 MD5=$MD5_TILAPIA
 KEY_COMBINATIONS=$KEY_COMBINATIONS_NEXUS_7;;
@@ -318,6 +361,7 @@ KEY_COMBINATIONS=$KEY_COMBINATIONS_NEXUS_7;;
 $MAKO_ID) 	DEVICE_NAME=$MAKO_NAME
 DEVICE_DIR=$MAKO_DIR
 CWM_VERSION=$MAKO_CWM_VERSION
+TWRP_URL=$MAKO_TWRP_URL
 FACTORY_URL=$FACTORY_MAKO
 MD5=$MD5_MAKO
 KEY_COMBINATIONS=$KEY_COMBINATIONS_NEXUS_4;;
@@ -325,6 +369,7 @@ KEY_COMBINATIONS=$KEY_COMBINATIONS_NEXUS_4;;
 $MANTA_ID)	 DEVICE_NAME=$MANTA_NAME
 DEVICE_DIR=$MANTA_DIR
 CWM_VERSION=$MANTA_CWM_VERSION
+TWRP_URL=$MANTA_TWRP_URL
 FACTORY_URL=$FACTORY_MANTA
 MD5=$MD5_MANTA
 KEY_COMBINATIONS=$KEY_COMBINATIONS_NEXUS_10;;
@@ -332,6 +377,7 @@ KEY_COMBINATIONS=$KEY_COMBINATIONS_NEXUS_10;;
 $FLO_ID)      DEVICE_NAME=$FLO_NAME
 DEVICE_DIR=$FLO_DIR
 CWM_VERSION=$FLO_CWM_VERSION
+TWRP_URL=$FLO_TWRP_URL
 FACTORY_URL=$FACTORY_FLO
 MD5=$MD5_FLO
 KEY_COMBINATIONS=$KEY_COMBINATIONS_NEXUS_7;;
@@ -339,9 +385,18 @@ KEY_COMBINATIONS=$KEY_COMBINATIONS_NEXUS_7;;
 $DEB_ID)      DEVICE_NAME=$DEB_NAME
 DEVICE_DIR=$DEB_DIR
 CWM_VERSION=$DEB_CWM_VERSION
+TWRP_URL=$DEB_TWRP_URL
 FACTORY_URL=$FACTORY_DEB
 MD5=$MD5_DEB
 KEY_COMBINATIONS=$KEY_COMBINATIONS_NEXUS_7;;
+
+$HAMMERHEAD_ID)      DEVICE_NAME=$HAMMERHEAD_NAME
+DEVICE_DIR=$HAMMERHEAD_DIR
+CWM_VERSION=$HAMMERHEAD_CWM_VERSION
+TWRP_URL=$HAMMERHEAD_TWRP_URL
+FACTORY_URL=$FACTORY_HAMMERHEAD
+MD5=$MD5_HAMMERHEAD
+KEY_COMBINATIONS=$KEY_COMBINATIONS_NEXUS_5;;
 
 
 $EXIT_KEY)  clear && exit;;
@@ -427,7 +482,7 @@ fi
 
 checkPlatformTools () {
 cd $PLATFORM_TOOLS_DIR
-if [ -e $PLATFORM_TOOLS_TGZ ] && [ $PLATFORM_TOOLS_MD5 != "`md5sum $PLATFORM_TOOLS_TGZ | head -c 32`" ];
+if [ -e $PLATFORM_TOOLS_TGZ ] && [ $PLATFORM_TOOLS_MD5 != "`$MD5_COMMAND $PLATFORM_TOOLS_TGZ | head -c 32`" ];
 then
 ERROR=$TRUE
 echo "ERROR: Platform Tools are corrupted. Erasing..."
@@ -492,7 +547,7 @@ echo ""
 
 printMenu () {
 echo "1. Unlock the Bootloader"
-echo "2. Flash ClockworkMod Recovery"
+echo "2. Flash ClockworkMod/TWRP Recovery"
 echo "3. Root the Device"
 echo "4. Lock the Bootloader"
 if [ $DEVICE != $DEB_ID ];
@@ -599,7 +654,7 @@ fastboot reboot
 recovery () {
 printRecoveryHeader
 printRecoveryMenu
-while [ $KEY != $STANDARD_CWM_ID ] && [ $KEY != $TOUCH_CWM_ID ] && [ $KEY != $RETURN_KEY ]
+while [ $KEY != $STANDARD_CWM_ID ] && [ $KEY != $TOUCH_CWM_ID ] && [ $KEY != $TWRP_ID ] && [ $KEY != $RETURN_KEY ]
 do
 printHeader
 printRecoveryHeader
@@ -610,8 +665,11 @@ then
 if [ $KEY == $STANDARD_CWM_ID ];
 then
 RECOVERY_VERSION="standard"
-else
+elif [ $KEY == $TOUCH_CWM_ID ];
+then
 RECOVERY_VERSION="touch"
+else
+RECOVERY_VERSION="twrp"
 fi
 printHeader
 printRecoveryHeader
@@ -635,6 +693,7 @@ echo ""
 printRecoveryMenu () {
 echo "$STANDARD_CWM_ID. Standard CWM Recovery"
 echo "$TOUCH_CWM_ID. Touch CWM Recovery"
+echo "$TWRP_ID. Touch TWRP Recovery"
 echo ""
 echo "$RETURN_KEY. Return to the main menu"
 echo ""
@@ -647,14 +706,14 @@ cd $DEVICE_DIR/recovery/$RECOVERY_VERSION
 if [ ! -e recovery.img ];
 then
  echo "Downloading CWM Recovery..."
-if [ $DEVICE == $FLO_ID ]; then
-wget -O recovery.img $FLO_TWRP_URL;
-elif [ $DEVICE == $DEB_ID ]; then
-wget -O recovery.img $DEB_TWRP_URL;
+if [ $DEVICE == $HAMMERHEAD_ID ]; then
+wget -O recovery.img $HAMMERHEAD_TWRP_URL;
 elif [ $RECOVERY_VERSION == "standard" ]; then
 wget -O recovery.img $CWM_COMMON_URL-$CWM_VERSION.img
-else
+elif [ $RECOVERY_VERSION == "touch" ]; then
 wget -O recovery.img $CWM_TOUCH_COMMON_URL-$CWM_VERSION.img;
+else
+wget -O recovery.img $TWRP_URL;
 fi
 fi
 }
@@ -764,7 +823,7 @@ fi
 }
 
 checkFactoryImage () {
-if [ $MD5 != "`md5sum factory.tgz | head -c 32`" ];
+if [ $MD5 != "`$MD5_COMMAND factory.tgz | head -c 32`" ];
 then
 ERROR=$TRUE
 echo "ERROR: Google Factory Image is Corrupted. Erasing..."
