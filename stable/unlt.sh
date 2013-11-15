@@ -232,9 +232,9 @@ TWRP_ID="W"
 
 if [ "`uname -s`" == "Darwin" ];	# Mac OS
 then
-    MD5_COMMAND = "md5 -q"
+  MD5_COMMAND="md5 -q"
 else
-	MD5_COMMAND = "md5sum"
+  MD5_COMMAND="md5sum"
 fi
 
 # /*** Functions ***/
