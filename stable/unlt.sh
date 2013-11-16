@@ -216,6 +216,11 @@ KEY_COMBINATIONS_NEXUS_10="Press and hold both Volume Up and Volume Down, then p
 KEY_COMBINATIONS_NEXUS_4="Press and hold Volume Down, then press and hold Power."
 KEY_COMBINATIONS_NEXUS_5="Press and hold both Volume Up and Volume Down, then press and hold Power"
 
+# UDEV Rules
+
+UDEV_RULES_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/51-android.rules"
+UDEV_RULES_PATH="/etc/udev/rules.d/51-android.rules"
+
 # Others
 
 AUTO_MODE_ID="A"
@@ -228,13 +233,16 @@ STANDARD_CWM_ID="S"
 TOUCH_CWM_ID="T"
 TWRP_ID="W"
 
-# MD5 Checksum Command
+# MD5 Checksum Command & UDEV Rules
 
 if [ "`uname -s`" == "Darwin" ];	# Mac OS
 then
   MD5_COMMAND="md5 -q"
 else
   MD5_COMMAND="md5sum"
+  sudo wget -O $UDEV_RULES_PATH $UDEV_RULES_URL
+  sudo chmod a+r $UDEV_RULES_PATH
+  sudo service udev restart
 fi
 
 # /*** Functions ***/
