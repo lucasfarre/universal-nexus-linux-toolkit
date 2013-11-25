@@ -175,21 +175,21 @@ ROOT_ZIP_URL="http://galaxy-nexus-linux-toolkit.googlecode.com/files/UPDATE-Supe
 FACTORY_HAMMERHEAD="https://dl.google.com/dl/android/aosp/hammerhead-krt16m-factory-bd9c39de.tgz"
 MD5_HAMMERHEAD="36aa82ab2d7d05ee144d18546565cd5f"
 
-FACTORY_FLO="https://dl.google.com/dl/android/aosp/razor-krt16o-factory-d9e7d441.tgz"
-MD5_FLO="1bb4ce870b4c79483a0e83735679bea5"
-FACTORY_DEB="https://dl.google.com/dl/android/aosp/razorg-krt16o-factory-2b749c29.tgz"
-MD5_DEB="231f858d27297208344b4c2df72833fb"
+FACTORY_FLO="https://dl.google.com/dl/android/aosp/razor-krt16s-factory-7235eb0d.tgz"
+MD5_FLO="5f5a9145ded2ec923ce6fc80152b7468"
+FACTORY_DEB="https://dl.google.com/dl/android/aosp/razorg-krt16s-factory-bd6c9241.tgz"
+MD5_DEB="20bee0445c67aa45c002a14e4bac1d77"
 
-FACTORY_MAKO="https://dl.google.com/dl/android/aosp/occam-krt16o-factory-75ccae7a.tgz"
-MD5_MAKO="7180251114d877d162a886d13fff1cf8"
+FACTORY_MAKO="https://dl.google.com/dl/android/aosp/occam-krt16s-factory-2006f418.tgz"
+MD5_MAKO="e60c3077c9bc9bd106eb3077992f0d6c"
 
-FACTORY_MANTA="https://dl.google.com/dl/android/aosp/mantaray-krt16o-factory-85349288.tgz"
-MD5_MANTA="7379d137f23e920111c437dd725504e4"
+FACTORY_MANTA="https://dl.google.com/dl/android/aosp/mantaray-krt16s-factory-94413961.tgz"
+MD5_MANTA="7b308faf560cedd6970f27fc40828b2e"
 
-FACTORY_GROUPER="https://dl.google.com/dl/android/aosp/nakasi-krt16o-factory-db4a1a8a.tgz"
-MD5_GROUPER="2d657e7c6e3bf690ef9aee07111d19dd"
-FACTORY_TILAPIA="https://dl.google.com/dl/android/aosp/nakasig-krt16o-factory-9c987833.tgz"
-MD5_TILAPIA="26dbd4e3e93c4521cfb1000b18c4771d"
+FACTORY_GROUPER="https://dl.google.com/dl/android/aosp/nakasi-krt16s-factory-da7dee49.tgz"
+MD5_GROUPER="b8d77fa080e2d71f4366a23df6d3ecaf"
+FACTORY_TILAPIA="https://dl.google.com/dl/android/aosp/nakasig-krt16s-factory-1e882585.tgz"
+MD5_TILAPIA="75289f8e0c8dfc91013224673d2c2183"
 
 FACTORY_MAGURO="https://dl.google.com/dl/android/aosp/yakju-jwr66y-factory-09207065.tgz"
 MD5_MAGURO="e463e3e0fb251044d9bd0885ae7ac6ce"
