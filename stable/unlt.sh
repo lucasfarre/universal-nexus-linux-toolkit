@@ -29,7 +29,7 @@ PATH="$PATH:$PWD/platform-tools"
 
 # /*** Constants ***/
 
-VERSION="241"
+VERSION="242"
 TRUE=1
 FALSE=0
 INVALID_DEVICE=0
@@ -250,7 +250,7 @@ fi
 printHeader () {
 clear
 echo "********************************************************************************"
-echo "*               Universal Nexus Linux Toolkit v2.4.1 by tatelucas              *"
+echo "*               Universal Nexus Linux Toolkit v2.4.2 by tatelucas              *"
 echo "********************************************************************************"
 }
 
@@ -435,6 +435,10 @@ fi
 if [ ! -d $DEVICE_DIR/recovery/touch ];
 then
 mkdir $DEVICE_DIR/recovery/touch
+fi
+if [ ! -d $DEVICE_DIR/recovery/twrp ];
+then
+mkdir $DEVICE_DIR/recovery/twrp
 fi
 if [ ! -d $DEVICE_DIR/root ];
 then
