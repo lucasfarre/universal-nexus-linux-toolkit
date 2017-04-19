@@ -28,9 +28,9 @@ With this toolkit you will be able to:
 HOW TO EXECUTE:
 Please extract the .tgz in the place you want, for example in /home/user
 Open a terminal and type the following:
->user@linuxormac: cd "THE PATH WHERE IS THE unltlauncher.sh FILE"
->user@linuxormac: bash ./unltlauncher.sh
+  user@linuxormac: cd "THE PATH WHERE IS THE unltlauncher.sh FILE"
+  user@linuxormac: bash ./unltlauncher.sh
 If you extract it in /home/user/unlt, the path to the .sh must be /home/user/unlt
 so you have to type:
->user@linuxormac: cd /home/user/unlt
->user@linuxormac: bash ./unltlauncher.sh
+  user@linuxormac: cd /home/user/unlt
+  user@linuxormac: bash ./unltlauncher.sh
