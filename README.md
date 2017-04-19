@@ -1,4 +1,4 @@
-# galaxy-nexus-linux-toolkit
+# Universal Nexus Linux Toolkit
 
 Universal Nexus Linux Toolkit is a bash script based program that offers an easy way
 to do all you need to do before flashing a custom ROM on your Nexus device.
